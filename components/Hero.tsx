@@ -1,21 +1,31 @@
 "use client"
 
-import { blurbob, silhouette, street } from "@/assets"
+import { blurbob, rainbow, silhouette, street } from "@/assets"
 import Image from "next/image"
 
 export default function Hero() {
   return (
     <section className="h-screen w-full relative">
+        <div className="absolute z-0 h-full w-full">
+            <Image
+                src={rainbow}
+                fill
+                alt="rainbow"
+                className="object-cover"
+            />
+        </div>
+        <div className="h-full w-full relative z-10 backdrop-blur-xl">
         <div className="h-full my-auto container mx-auto grid grid-cols-6 grid-rows-6 gap-1">
             <div className="col-span-6 row-span-1"></div>
-            <Objectives />
-            <HeroImage />
-            <Niche />
-            <SomeSVG />
-            <MorphCard />
-            <CTA />
-            <Contacts />
-            <div className="col-span-6 row-span-1">C</div>
+                <Objectives />
+                <HeroImage />
+                <Niche />
+                <SomeSVG />
+                <MorphCard />
+                <CTA />
+                <Contacts />
+            <div className="col-span-6 row-span-1"></div>
+        </div>
         </div>
     </section>
   )
@@ -47,7 +57,7 @@ const HeroImage = () => {
 
 const CTA = () => {
     return (
-        <div className="col-span-1 row-span-1">
+        <div className="col-span-1 row-span-1 flex flex-col justify-center items-start">
             <button type="button" className="bg-primary text-lg h-16 w-44 rounded-full border-2 border-black text-white font-mont font-bold">
                 Watch Video
             </button>
