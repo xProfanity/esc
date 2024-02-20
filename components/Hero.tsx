@@ -1,6 +1,6 @@
 "use client"
 
-import { blurbob, rainbow, silhouette, street } from "@/assets"
+import { rainbow, silhouette, street } from "@/assets"
 import Image from "next/image"
 
 export default function Hero() {
@@ -88,7 +88,7 @@ const Objectives = () => {
             text: "Afforestation, reforestation, pollution, and sanitation issues"
         },
         {
-            objective: "social",
+            objective: "society",
             text: "Natural disasters, corruption, educational issues"
         },
         {
@@ -117,7 +117,7 @@ const Objectives = () => {
 const SomeSVG = () => {
     return (
         <div className="col-span-1 row-span-2 rounded-3xl relative overflow-hidden">
-            <div className="h-full w-full flex flex-col justify-center items-center relative">
+            {/* <div className="h-full w-full flex flex-col justify-center items-center relative">
                 <div className="absolute h-full w-full flex flex-col justify-center items-center z-0">
                     <Image
                         src={blurbob}
@@ -127,7 +127,7 @@ const SomeSVG = () => {
                     />
                 </div>
                 <p className="text-white text-xs font-mont font-bold text-center relative z-0">REGISTERED TRUSTEES OF THE ENVIRONMENT, SOCIETY & CULTURE (ESC)</p>
-            </div>
+            </div> */}
         </div>
     )
 }
@@ -135,7 +135,7 @@ const SomeSVG = () => {
 const Contacts = () => {
     return (
         <div className="col-span-2 row-span-1">
-            <div className="h-full w-full flex flex-col justify-center items-center gap-2">
+            {/* <div className="h-full w-full flex flex-col justify-center items-center gap-2">
                 <p className="text-xs  text-white font-bold text-center font-mont flex flex-row gap-1 justify-center items-center">
                     <span>
                         <svg className="h-6 w-6 text-red-500"
@@ -176,7 +176,7 @@ const Contacts = () => {
                                 d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"></path>
                         </svg>
                     </span>P.O Box 333, Blantyre, Malawi.</p>
-            </div>
+            </div> */}
         </div>
     )
 }

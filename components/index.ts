@@ -1,5 +1,6 @@
+import AfterHero from "./AfterHero";
 import Header from "./Header";
 import Hero from "./Hero";
 
-export { Header, Hero };
+export { AfterHero, Header, Hero };
 
