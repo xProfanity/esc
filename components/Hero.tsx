@@ -5,7 +5,7 @@ import Image from "next/image"
 
 export default function Hero() {
   return (
-    <section className="h-screen w-full relative">
+    <section className="h-screen w-full relative mt-5">
         <div className="absolute z-0 h-full w-full">
             <Image
                 src={rainbow}
@@ -15,17 +15,17 @@ export default function Hero() {
             />
         </div>
         <div className="h-full w-full relative z-10 backdrop-blur-xl">
-        <div className="h-full my-auto container mx-auto grid grid-cols-6 grid-rows-6 gap-1">
-            <div className="col-span-6 row-span-1"></div>
-                <Objectives />
-                <HeroImage />
-                <Niche />
-                <SomeSVG />
-                <MorphCard />
-                <CTA />
-                <Contacts />
-            <div className="col-span-6 row-span-1"></div>
-        </div>
+            <div className="h-full my-auto container mx-auto grid grid-cols-6 grid-rows-6 gap-1">
+                <div className="col-span-6 row-span-1"></div>
+                    <Objectives />
+                    <HeroImage />
+                    <Niche />
+                    <SomeSVG />
+                    <MorphCard />
+                    <CTA />
+                    <Contacts />
+                <div className="col-span-6 row-span-1"></div>
+            </div>
         </div>
     </section>
   )
