@@ -15,6 +15,9 @@ const config: Config = {
       },
       fontFamily: {
         'mont': ["Montserrat", "sans-serif"]
+      },
+      colors: {
+        primary: "#32cd32"
       }
     },
   },
