@@ -5,7 +5,7 @@ import Image from "next/image"
 
 export default function Hero() {
   return (
-    <section className="h-screen w-full relative mt-5">
+    <section className="h-screen w-full relative mt-5 z-10">
         <div className="absolute z-0 h-full w-full">
             <Image
                 src={rainbow}
@@ -41,16 +41,21 @@ const Niche = () => {
 
 const HeroImage = () => {
     return (
-        <div className="col-span-3 row-span-2 relative overflow-hidden rounded-3xl">
+        <div className="col-span-3 row-span-2 relative rounded-3xl z-10">
             <div className="relative h-full w-full">
                 <Image
                     src={street}
                     fill
                     alt="streets"
-                    className="object-cover"
+                    className="object-cover rounded-3xl"
                     placeholder="blur"
                 />
+                <div className="absolute h-40 w-40 rounded-2xl bg-transparent backdrop-blur-lg flex flex-col justify-center items-center top-0 right-0 -translate-y-1/2 shadow-lg shadow-black">
+                    <p className="text-lg text-white font-bold font-mont">ESTO</p>
+                    <p className="text-lg text-white font-bold font-mont">July 2017</p>
+                </div>
             </div>
+
         </div>
     )
 }

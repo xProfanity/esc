@@ -5,6 +5,7 @@ export default function Home() {
     <>
       <Hero />
       <AfterHero />
+      <section className="h-screen"></section>
     </>
   )
 }
