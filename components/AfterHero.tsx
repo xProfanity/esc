@@ -20,7 +20,6 @@ export default function AfterHero() {
         pin: "#textContainer",
         start: 'top 20%',
         end: 'bottom bottom',
-        markers: true
       });
 
       gsap.to("#text", {
