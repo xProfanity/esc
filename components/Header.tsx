@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Header() {
   return (
-    <header className="fixed z-50 h-20 w-full flex flex-col justify-center items-center backdrop-blur-xl shadow-lg shadow-black">
+    <header className="fixed z-50 h-20 w-full flex flex-col justify-center items-center backdrop-blur-xl shadow-lg shadow-black opacity-0">
         <nav className="h-full w-11/12 flex flex-row justify-between items-center">
             <div className="relative h-20 w-28">
                 <Image

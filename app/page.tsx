@@ -1,11 +1,11 @@
-import { AfterHero, Hero } from "@/components";
+import { AfterHero, Hero, Missions } from "@/components";
 
 export default function Home() {
   return (
     <>
       <Hero />
       <AfterHero />
-      <section className="h-screen"></section>
+      <Missions />
     </>
   )
 }

@@ -1,3 +1,5 @@
+import { charts, leaf, masks } from "@/assets"
+
 export const objectives = [
     {
       objective: "Environment",
@@ -31,3 +33,24 @@ export const objectives = [
       ]
     }
   ]
+
+export const missions = [
+  {
+    classes: "col-span-6 row-span-12",
+    mission: "Strive towards sustenance in Climate Change & Environment.",
+    image: leaf,
+    header: "Our Missions",
+  },
+  {
+    classes: "col-span-6 row-span-6",
+    mission: "Counter Socio-Economic issues and Corruption.",
+    image: charts,
+    header: null,
+  },
+  {
+    classes: "col-span-6 row-span-6",
+    mission: "Participate in fighting pandemics and disasters.",
+    image: masks,
+    header: null,
+  },
+]
