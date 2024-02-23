@@ -1,4 +1,4 @@
-import { AfterHero, Hero, Missions } from "@/components";
+import { AfterHero, CoreValues, Hero, Missions } from "@/components";
 
 export default function Home() {
   return (
@@ -6,6 +6,7 @@ export default function Home() {
       <Hero />
       <AfterHero />
       <Missions />
+      <CoreValues />
     </>
   )
 }

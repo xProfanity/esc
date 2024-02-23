@@ -50,7 +50,7 @@ const HeroImage = () => {
                     className="object-cover rounded-3xl"
                     placeholder="blur"
                 />
-                <div className="absolute h-40 w-40 rounded-2xl bg-transparent backdrop-blur-lg flex flex-col justify-center items-center top-0 right-0 -translate-y-1/2 shadow-lg shadow-black">
+                <div className="absolute h-40 w-40 rounded-2xl bg-transparent backdrop-blur-lg flex flex-col justify-center items-center top-0 right-0 -translate-y-1/2 shadow-lg">
                     <p className="text-lg text-white font-bold font-mont">ESTO</p>
                     <p className="text-lg text-white font-bold font-mont">July 2017</p>
                 </div>
