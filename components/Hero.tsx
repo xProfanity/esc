@@ -104,7 +104,7 @@ const Objectives = () => {
     return (
         <>
             {objectives.map((objective, i) => (
-                <div className="col-span-1 row-span-1 h-full w-full flex flex-row justify-start items-start">
+                <div key={i} className="col-span-1 row-span-1 h-full w-full flex flex-row justify-start items-start">
                     <div className="h-full w-3 flex flex-col justify-start items-center">
                         <div className="h-2 w-2 bg-primary rounded-full"></div>
                         <div className="h-[calc(100%-8px)] w-[2px] bg-gray-500"></div>

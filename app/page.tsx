@@ -7,6 +7,7 @@ export default function Home() {
       <AfterHero />
       <Missions />
       <CoreValues />
+      <section className="h-screen w-full"></section>
     </>
   )
 }

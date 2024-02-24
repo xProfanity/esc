@@ -50,7 +50,7 @@ export default function AfterHero() {
         </div>
         <div className="col-span-1 row-span-1 flex flex-col gap-20">
           {objectives.map((objective, index) => (
-            <Objective objective={objective} index={index} />
+            <Objective objective={objective} key={index} />
           ))}
         </div>
       </div>
@@ -64,12 +64,11 @@ interface ObjProps {
     objective: string;
     points: string[];
   },
-  index: number;
 }
 
-const Objective = ({objective, index}: ObjProps) => {
+const Objective = ({objective}: ObjProps) => {
   return (
-    <div key={index} className="h-auto w-full bg-gradient-to-br to-primary via-[#55cf55] from-[#7ed97e] rounded-3xl p-2 pb-10">
+    <div className="h-auto w-full bg-gradient-to-br to-primary via-[#55cf55] from-[#7ed97e] rounded-3xl p-2 pb-10">
       <div className="h-auto py-1 w-full flex flex-row justify-center items-center">
         <p className="text-5xl text-white font-mont font-bold ">{objective.objective}</p>
       </div>

@@ -31,7 +31,7 @@ export default function Missions() {
 
 const MissionPanel = ({mission, classes, image, header, number}: Props) => {
     return (
-        <div className={`${classes} bg-gradient-to-br to-primary via-[#55cf55] from-[#7ed97e] rounded-3xl relative overflow-hidden`}>
+        <div className={`${header ? 'col-span-6 row-span-12' : 'col-span-6 row-span-6'} bg-gradient-to-br to-primary via-[#55cf55] from-[#7ed97e] rounded-3xl relative overflow-hidden`}>
             {header && (
                 <div className="h-32 ml-5 flex flex-col justify-center items-start mt-10">
                     <p className="text-6xl font-extrabold text-[#0c0c0c] font-mont">{header}</p>
