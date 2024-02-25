@@ -1,4 +1,4 @@
-import { AfterHero, CoreValues, Hero, Missions } from "@/components";
+import { AfterHero, CoreValues, Hero, HorizontalScroller, Missions } from "@/components";
 
 export default function Home() {
   return (
@@ -7,7 +7,7 @@ export default function Home() {
       <AfterHero />
       <Missions />
       <CoreValues />
-      <section className="h-screen w-full"></section>
+      <HorizontalScroller />
     </>
   )
 }
