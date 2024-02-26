@@ -1,7 +1,7 @@
 import { funding, huddle, vision } from "@/assets";
 import Image from "next/image";
 
-export default function HorizontalScroller() {
+export default function FundingAndVision() {
   return (
     <section className="h-screen w-full">
       <div className="container h-[90%] mx-auto flex flex-row justify-between items-center gap-2 bg-primary rounded-3xl">
