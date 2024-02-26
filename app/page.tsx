@@ -1,4 +1,4 @@
-import { AfterHero, CoreValues, Hero, HorizontalScroller, Map, Missions } from "@/components";
+import { AfterHero, CoreValues, FundingAndVision, Hero, Map, Missions } from "@/components";
 
 export default function Home() {
   return (
@@ -7,7 +7,7 @@ export default function Home() {
       <AfterHero />
       <Missions />
       <CoreValues />
-      <HorizontalScroller />
+      <FundingAndVision />
       <Map />
     </>
   )
