@@ -8,6 +8,7 @@ export default function Home() {
       <Missions />
       <CoreValues />
       <HorizontalScroller />
+      <section className="h-screen w-full"></section>
     </>
   )
 }

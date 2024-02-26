@@ -17,8 +17,8 @@
     position: absolute;
     right: 10px;
     background: rgb(50,205,50);
-    background: -moz-linear-gradient(176deg, rgba(50,205,50,1) 47%, rgba(40,63,79,1) 75%);
-    background: -webkit-linear-gradient(176deg, rgba(50,205,50,1) 47%, rgba(40,63,79,1) 75%);
-    background: linear-gradient(176deg, rgba(50,205,50,1) 47%, rgba(40,63,79,1) 75%);
+    background: -moz-linear-gradient(176deg, rgba(50,205,50,1) 47%, rgb(65, 128, 70) 75%);
+    background: -webkit-linear-gradient(176deg, rgba(50,205,50,1) 47%, rgba(65, 128, 70, 1) 75%);
+    background: linear-gradient(176deg, rgba(50,205,50,1) 47%, rgba(65, 128, 70, 1) 75%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#32cd32",endColorstr="#283f4f",GradientType=1);
 }
