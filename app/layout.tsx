@@ -1,4 +1,5 @@
 import { Header } from "@/components";
+import BodyWrapper from "@/components/BodyWrapper";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -22,9 +23,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Header />
-        <main className="bg-[#011222] overflow-hidden relative">
+        <BodyWrapper>
           {children}
-        </main>
+        </BodyWrapper>
       </body>
     </html>
   );

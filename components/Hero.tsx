@@ -1,9 +1,13 @@
 "use client"
 
 import { rainbow, silhouette, street } from "@/assets"
+import { base } from "@/context/store"
+import { motion } from "framer-motion"
 import Image from "next/image"
+import { useSnapshot } from "valtio"
 
 export default function Hero() {
+
   return (
     <section className="h-screen w-full relative mt-5 z-10">
         <div className="absolute z-0 h-full w-full">
@@ -32,14 +36,17 @@ export default function Hero() {
 }
 
 const Niche = () => {
+    const snap = useSnapshot(base)
     return (
         <div className="col-span-3 row-span-2 flex flex-col justify-center items-center">
-            <p className="text-5xl font-extrabold font-mont uppercase text-white">Empowering Communities for a Sustainable Future</p>
+            <motion.p animate={{color: snap.darkmode ? '#fff' : '#011222'}} className="text-5xl font-extrabold font-mont uppercase">Empowering Communities for a Sustainable Future</motion.p>
         </div>
     )
 }
 
 const HeroImage = () => {
+    const snap = useSnapshot(base)
+
     return (
         <div className="col-span-3 row-span-2 relative rounded-3xl z-10">
             <div className="relative h-full w-full">
@@ -51,8 +58,8 @@ const HeroImage = () => {
                     placeholder="blur"
                 />
                 <div className="absolute h-40 w-40 rounded-2xl bg-transparent backdrop-blur-lg flex flex-col justify-center items-center top-0 right-0 -translate-y-1/2 shadow-lg">
-                    <p className="text-lg text-white font-bold font-mont">ESTO</p>
-                    <p className="text-lg text-white font-bold font-mont">July 2017</p>
+                    <motion.p animate={{color: snap.darkmode ? '#fff' : "#32cd32"}} className="text-lg font-bold font-mont">ESTO</motion.p>
+                    <motion.p animate={{color: snap.darkmode ? '#fff' : "#32cd32"}} className="text-lg font-bold font-mont">July 2017</motion.p>
                 </div>
             </div>
 
@@ -61,11 +68,13 @@ const HeroImage = () => {
 }
 
 const CTA = () => {
+    const snap = useSnapshot(base)
+
     return (
         <div className="col-span-1 row-span-1 flex flex-col justify-center items-start">
-            <button type="button" className="bg-primary text-lg h-16 w-44 rounded-full border-2 border-black text-white font-mont font-bold">
+            <motion.button animate={{color: snap.darkmode ? '#fff' : "#011222"}} type="button" className="bg-primary text-lg h-16 w-44 rounded-full font-mont font-bold">
                 Watch Video
-            </button>
+            </motion.button>
         </div>
     )
 }
@@ -87,6 +96,8 @@ const MorphCard = () => {
 }
 
 const Objectives = () => {
+    const snap = useSnapshot(base)
+
     const objectives = [
         {
             objective: "environment",
@@ -110,8 +121,8 @@ const Objectives = () => {
                         <div className="h-[calc(100%-8px)] w-[2px] bg-gray-500"></div>
                     </div>
                     <div className="h-full w-auto flex flex-col justify-start items-start ml-2 gap-1">
-                        <p className="font-mont text-2xl text-white font-extrabold">{objective.objective}</p>
-                        <p className="font-mont text-sm text-white font-light">{objective.text}</p>
+                        <motion.p animate={{color: snap.darkmode ? '#fff' : "#011222"}} className="font-mont text-2xl font-extrabold">{objective.objective}</motion.p>
+                        <motion.p animate={{color: snap.darkmode ? '#fff' : "#011222"}} className="font-mont text-sm font-light">{objective.text}</motion.p>
                     </div>
                 </div>
             ))}

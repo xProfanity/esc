@@ -5,6 +5,7 @@ import Header from "./Header";
 import Hero from "./Hero";
 import Map from "./Map";
 import Missions from "./Missions";
+import ThemeButton from "./ThemeButton";
 
-export { AfterHero, CoreValues, FundingAndVision, Header, Hero, Map, Missions };
+export { AfterHero, CoreValues, FundingAndVision, Header, Hero, Map, Missions, ThemeButton };
 
