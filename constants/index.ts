@@ -54,3 +54,22 @@ export const missions = [
     header: null,
   },
 ]
+
+export const Navlinks = [
+  {
+    name: "videos",
+    link: '/videos'
+  },
+  {
+    name: "about us",
+    link: '/about-us'
+  },
+  {
+    name: "goals",
+    link: '/goals'
+  },
+  {
+    name: "funding",
+    link: '/funding'
+  }
+]

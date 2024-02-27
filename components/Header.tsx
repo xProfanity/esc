@@ -1,5 +1,7 @@
 import { logo } from "@/assets";
+import { Navlinks } from "@/constants";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Header() {
   return (
@@ -15,11 +17,12 @@ export default function Header() {
             </div>
 
             <div className="w-3/5 h-full flex flex-row justify-between items-center">
-                <ul className="text-white flex flex-row justify-around items-center w-full">
-                    <li>Videos</li>
-                    <li>Organization</li>
-                    <li>Goals</li>
-                    <li>Funding</li>
+                <ul className="flex flex-row justify-around items-center w-full">
+                    {Navlinks.map((item, i) => (
+                        <li key={i} className="text-white capitalize">
+                            <Link href={item.link}>{item.name}</Link>
+                        </li>
+                    ))}
                 </ul>
 
                 <div className="w-2/5 flex flex-col justify-center items-center h-full">

@@ -21,7 +21,7 @@ export default function FundingAndVision() {
                 />
               </div>
 
-              <p className="font-semibold w-4/5 mx-auto text-justify text-lg font-mont text-white">To be the organization of choice in Environment, Society, and Cultural issues contributing to national development.</p>
+              <p className="font-semibold w-4/5 mx-auto text-justify text-lg font-mont text-[white]">To be the organization of choice in Environment, Society, and Cultural issues contributing to national development.</p>
             </div>
             <div className="flex flex-col w-full justify-evenly items-start gap-2 h-[15rem]">
               <div className="relative h-[80px] w-[120px] mx-auto">
