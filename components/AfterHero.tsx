@@ -68,7 +68,7 @@ interface ObjProps {
 
 const Objective = ({objective}: ObjProps) => {
   return (
-    <div className="h-auto w-full bg-gradient-to-br to-primary via-[#55cf55] from-[#7ed97e] rounded-3xl p-2 pb-10">
+    <div className="h-auto w-full bg-primary rounded-3xl p-2 pb-10">
       <div className="h-auto py-1 w-full flex flex-row justify-center items-center">
         <p className="text-5xl text-white font-mont font-bold ">{objective.objective}</p>
       </div>
