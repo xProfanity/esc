@@ -9,8 +9,8 @@ import { useSnapshot } from "valtio"
 export default function Hero() {
 
   return (
-    <section className="h-screen w-full relative mt-5 z-10">
-        <div className="absolute z-0 h-full w-full">
+    <section className="h-[120vh] max-h-[924px] w-full relative mt-5 z-10">
+        <div className="absolute z-0 h-full w-full ">
             <Image
                 src={rainbow}
                 fill
@@ -19,16 +19,17 @@ export default function Hero() {
             />
         </div>
         <div className="h-full w-full relative z-10 backdrop-blur-xl">
-            <div className="h-full my-auto container mx-auto grid grid-cols-6 grid-rows-6 gap-1">
-                <div className="col-span-6 row-span-1"></div>
-                    <Objectives />
-                    <HeroImage />
-                    <Niche />
-                    <SomeSVG />
-                    <MorphCard />
-                    <CTA />
-                    <Contacts />
-                <div className="col-span-6 row-span-1"></div>
+            <div className="h-full my-auto container mx-auto flex flex-col lg:flex-row justify-between item-center">
+                    <div className="w-full h-full flex flex-col justify-start items-center sm:items-start gap-10 lg:justify-center mt-0 lg:-mt-10">
+                        <Objectives />
+                        <Niche />
+                        <CTA />
+                    </div>
+                    <div className="relative w-full h-full mt-0 lg:-mt-10">
+                        <HeroImage />
+                    </div>
+                    {/* <SomeSVG />
+                    <Contacts /> */}
             </div>
         </div>
     </section>
@@ -37,9 +38,10 @@ export default function Hero() {
 
 const Niche = () => {
     const snap = useSnapshot(base)
+    
     return (
-        <div className="col-span-3 row-span-2 flex flex-col justify-center items-center">
-            <motion.p animate={{color: snap.darkmode ? '#fff' : '#011222'}} className="text-5xl font-extrabold font-mont uppercase">Empowering Communities for a Sustainable Future</motion.p>
+        <div className="flex flex-col justify-center items-center">
+            <motion.p animate={{color: snap.darkmode ? '#a855f7' : '#a855f7'}}  className="text-3xl sm:text-5xl xl:text-6xl 2xl:text-7xl font-extrabold font-mont uppercase text-center sm:text-left">Empowering Communities for a Sustainable Future</motion.p>
         </div>
     )
 }
@@ -48,8 +50,8 @@ const HeroImage = () => {
     const snap = useSnapshot(base)
 
     return (
-        <div className="col-span-3 row-span-2 relative rounded-3xl z-10">
-            <div className="relative h-full w-full">
+        <div className="relative rounded-3xl z-10 h-full lg:flex lg:flex-col lg:justify-center">
+            <div className="absolute h-[300px] sm:h-[350px] md:h-[400px] lg:h-[350px] xl:h-[400px] 2xl:h-[500px] w-5/6 sm:w-[450px] md:w-[500px] lg:w-[450px] xl:w-[500px] 2xl:w-[600px] left-1/2 -translate-x-1/2 sm:-translate-x-1/3 lg:-translate-x-1/3 lg:right-0 mt-14 sm:mt-10 md:mt-0">
                 <Image
                     src={street}
                     fill
@@ -61,6 +63,15 @@ const HeroImage = () => {
                     <motion.p animate={{color: snap.darkmode ? '#fff' : "#32cd32"}} className="text-lg font-bold font-mont">ESTO</motion.p>
                     <motion.p animate={{color: snap.darkmode ? '#fff' : "#32cd32"}} className="text-lg font-bold font-mont">July 2017</motion.p>
                 </div>
+                    <div className="absolute sm:h-[250px] md:h-[300px] lg:h-[250px] xl:h-[300px] 2xl:h-[400px] sm:w-[300px] md:w-[350px] lg:w-[300px] xl:w-[350px] 2xl:w-[450px] rounded-3xl bottom-0 sm:left-0 lg:right-0 xl:left-0 sm:-translate-x-1/2 lg:-translate-x-1/3 xl:-translate-x-1/3 md:-translate-y-1/4 lg:translate-y-1/3 overflow-hidden hidden sm:block">
+                        <Image
+                            src={silhouette}
+                            fill
+                            alt="streets"
+                            className="object-cover"
+                            placeholder="blur"
+                        />
+                    </div>
             </div>
 
         </div>
@@ -71,8 +82,8 @@ const CTA = () => {
     const snap = useSnapshot(base)
 
     return (
-        <div className="col-span-1 row-span-1 flex flex-col justify-center items-start">
-            <motion.button animate={{color: snap.darkmode ? '#fff' : "#011222"}} type="button" className="bg-primary text-lg h-16 w-44 rounded-full font-mont font-bold">
+        <div className="flex flex-col justify-center items-start">
+            <motion.button animate={{color: snap.darkmode ? '#fff' : "#011222"}} type="button" className="bg-primary text-lg 2xl:text-xl h-16 2xl:h-24 w-44 2xl:w-64 rounded-2xl md:rounded-3xl lg:rounded-full font-mont font-bold">
                 Watch Video
             </motion.button>
         </div>
@@ -113,20 +124,20 @@ const Objectives = () => {
         },
     ]
     return (
-        <>
+        <div className="flex flex-row justify-start items-center w-full mt-28 xl:mt-0">
             {objectives.map((objective, i) => (
-                <div key={i} className="col-span-1 row-span-1 h-full w-full flex flex-row justify-start items-start">
+                <div key={i} className="h-full w-full flex flex-row justify-start items-start">
                     <div className="h-full w-3 flex flex-col justify-start items-center">
                         <div className="h-2 w-2 bg-primary rounded-full"></div>
                         <div className="h-[calc(100%-8px)] w-[2px] bg-gray-500"></div>
                     </div>
                     <div className="h-full w-auto flex flex-col justify-start items-start ml-2 gap-1">
-                        <motion.p animate={{color: snap.darkmode ? '#fff' : "#011222"}} className="font-mont text-2xl font-extrabold">{objective.objective}</motion.p>
-                        <motion.p animate={{color: snap.darkmode ? '#fff' : "#011222"}} className="font-mont text-sm font-light">{objective.text}</motion.p>
+                        <motion.p animate={{color: snap.darkmode ? '#fff' : "#011222"}} className="font-mont text-lg sm:text-xl [1280px]:text-2xl font-semibold [1280px]:font-extrabold 2xl:text-3xl">{objective.objective}</motion.p>
+                        <motion.p animate={{color: snap.darkmode ? '#fff' : "#011222",}} className="font-mont text-xs sm:text-sm 2xl:text-base font-medium">{objective.text}</motion.p>
                     </div>
                 </div>
             ))}
-        </>
+        </div>
     )
 }
 
