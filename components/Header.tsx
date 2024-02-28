@@ -17,7 +17,7 @@ export default function Header() {
     const animateTextColor = {color: snap.darkmode ? '#fff' : '#011222'}
 
   return (
-    <header className="absolute top-0 left-0 z-50 h-20 w-full flex flex-col justify-center items-center backdrop-blur-xl shadow-xl">
+    <motion.header animate={{backgroundColor: snap.darkmode ? "#011222" : "#fff"}} className="fixed lg:absolute top-0 left-0 z-50 h-20 w-full flex flex-col justify-center items-center backdrop-blur-none lg:bg-transparent lg:backdrop-blur-xl shadow-xl">
         <nav className="h-full w-11/12 flex flex-row justify-between items-center">
             <div className="relative h-20 w-28">
                 <Image
@@ -45,7 +45,7 @@ export default function Header() {
             </div>
 
             <div className="flex md:hidden flex-row-reverse justify-center items-center gap-5">
-                <button type="button">
+                <button type="button" onClick={() => base.drawerOpen = !snap.drawerOpen}>
                     <motion.svg animate={animateTextColor}  className="h-10 w-10" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
                     </motion.svg>
@@ -54,6 +54,6 @@ export default function Header() {
                 <ThemeButton />
             </div>
         </nav>
-    </header>
+    </motion.header>
   )
 }

@@ -1,4 +1,4 @@
-import { Header } from "@/components";
+import { Drawer, Header } from "@/components";
 import BodyWrapper from "@/components/BodyWrapper";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -23,6 +23,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Header />
+        <Drawer />
         <BodyWrapper>
           {children}
         </BodyWrapper>
