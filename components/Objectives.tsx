@@ -5,7 +5,7 @@ import { base } from "@/context/store";
 import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import { useLayoutEffect, useRef } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import { useSnapshot } from "valtio";
 
 
@@ -48,14 +48,14 @@ export default function Objectives() {
     <section className="h-auto w-full">
       <div className="h-full mx-auto container flex flex-col justify-start items-start pb-20">
    
-        <div className="h-32 w-full flex flex-col justify-start items-center">
+        <div className="h-32 w-full flex flex-col justify-start items-center mt-36">
           <h1 className="p-3 border-2 border-accent text-accent font-mont font-bold rounded-full">objectives</h1>
         </div>
 
         <div id="section" className="flex flex-col md:flex-row justify-start md:justify-between items-start">
           <div className="w-full md:w-2/5 h-96 md:h-full relative ">
             <div id="textContainer">
-              <motion.h1 animate={{color: snap.darkmode ? "#fff" : "#011222"}} className="text-4xl sm:text-6xl md:text-4xl lg:text-5xl font-extrabold font-mont 
+              <motion.h1 animate={{color: snap.darkmode ? "#fff" : "#011222"}} className="text-4xl sm:text-6xl md:text-4xl lg:text-5xl font-extrabold font-mont
               text-white text-center md:text-left animate-text-down">
                 The Environment, Society & Culture
               </motion.h1>
@@ -83,30 +83,47 @@ interface ObjProps {
 }
 
 const Objective = ({objective}: ObjProps) => {
+    const [expanded, setExpanded] = useState(false)
+
+    const expandPanel = () => setExpanded((current) => !current)
+
   return (
-    <div className="h-auto w-2/3 bg-primary rounded-3xl p-2 pb-5 lg:pb-10">
-      <div className="h-auto py-1 w-11/12 mx-auto flex flex-row justify-start items-center">
-        <p className="text-3xl lg:text-5xl text-[#011222] font-mont font-bold ">{objective.objective}</p>
-      </div>
+    <div className="h-96 w-full lg:w-2/3 overflow-hidden relative">
+      <div className={`h-full w-full bg-primary rounded-3xl ${expanded ? 'overflow-y-scroll' : 'overflow-y-hidden'} overflow-x-hidden relative`}>
 
-      <div className="mt-1 w-11/12 mx-auto">
-        <p className="text-[#011222] font-bold font-mont text-lg lg:text-lg text-left w-full">{objective.content}</p>
-      </div>
+        <div className="h-auto py-1 w-11/12 mx-auto flex flex-row justify-start items-center mt-5">
+          <p className="text-3xl lg:text-5xl text-[#011222] font-mont font-bold ">{objective.objective}</p>
+        </div>
 
-      <div className="mt-5 w-11/12 mx-auto">
-        <button type="button" className="flex flex-row justify-start items-center gap-2">
-          <p className="text-white text-xl">Read more</p>
-          <span className="text-white text-xl">{"==>"}</span>
+        <div className="mt-7 w-11/12 mx-auto">
+          <p className="text-[#011222] font-bold font-mont text-lg lg:text-lg text-left w-full">{objective.content}</p>
+        </div>
+
+        <div className="mt-10 w-11/12 mx-auto">
+          <button type="button" className="flex flex-row justify-start items-center gap-2" onClick={expandPanel}>
+            <p className="text-white text-xl">Read more</p>
+            <span className="text-white text-xl">{"==>"}</span>
+          </button>
+        </div>
+      </div>
+      <motion.div
+        initial={{x: '100%'}}
+        animate={{x: expanded ? 0 : '100%'}}
+        transition={{duration: .7}}
+        className="h-full w-full absolute bg-[#0c0c0c] flex flex-col justify-center items-center top-0 left-0 rounded-2xl">
+        <ul className="w-11/12 mx-auto flex flex-col gap-2 overflow-y-scroll object-panel">
+          {objective.points.map((point, i) => (
+            <li className="w-full py-2 flex flex-row justify-start items-start gap-3">
+              <span className="h-12 w-12 text-sm flex flex-col justify-center items-center rounded-full bg-accent text-white">{i+1}</span>
+              <p className="text-white font-bold font-mont text-xs text-left w-full">{point}</p>
+            </li>
+          ))}
+        </ul>
+
+        <button type="button" onClick={expandPanel} className="text-lg font-bold text-white mt-10">
+          close
         </button>
-      </div>
-
-      {/* <ul className="w-11/12 h-auto mx-auto mt-5 lg:mt-10 flex flex-col justify-start items-start gap-2 lg:gap-4 list-disc">
-        {objective.points.map((point, index) => (
-          <li key={index}>
-            <p className="text-xs lg:text-sm font-mont text-white font-bold mx-auto">{point}</p>
-          </li>
-        ))}
-      </ul> */}
+      </motion.div>
     </div>
   )
 }

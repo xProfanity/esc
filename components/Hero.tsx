@@ -12,9 +12,9 @@ export default function Hero() {
   return (
     <section className="h-[120vh] max-h-[924px] w-full relative mt-5 z-10">
         <BackgroundRainbow />
-        <div className="h-full w-full relative z-10 backdrop-blur-x">
+        <div className="h-full w-full relative z-10">
             <div className="h-full flex flex-col justify-start items-start">
-                <div className="my-auto container mx-auto flex flex-col lg:flex-row justify-between item-center">
+                <div className="lg:my-auto container mx-auto flex flex-col lg:flex-row justify-between item-center">
                         <div className="w-full h-full flex flex-col justify-start items-center sm:items-start gap-10 lg:justify-center mt-0 lg:-mt-10">
                             <Objectives />
                             <Niche />
@@ -50,7 +50,7 @@ const HeroImage = () => {
 
     return (
         <div className="relative rounded-3xl z-10 h-full lg:flex lg:flex-col lg:justify-center">
-            <div className="absolute h-[300px] sm:h-[350px] md:h-[400px] lg:h-[350px] xl:h-[400px] w-5/6 sm:w-[450px] md:w-[500px] lg:w-[450px] xl:w-[500px] left-1/2 -translate-x-1/2 sm:-translate-x-1/3 lg:-translate-x-1/3 lg:right-0 mt-14 sm:mt-10 md:mt-0">
+            <div className="absolute h-[300px] sm:h-[350px] md:h-[400px] lg:h-[350px] xl:h-[400px] w-5/6 sm:w-[450px] md:w-[500px] lg:w-[450px] xl:w-[500px] left-1/2 -translate-x-1/2 sm:-translate-x-1/3 lg:-translate-x-1/3 lg:right-0 mt-28 sm:mt-24 lg:mt-0">
                 <Image
                     src={street}
                     fill

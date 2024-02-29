@@ -12,17 +12,22 @@ interface Props {
 export default function Missions() {
   return (
     <section className="h-screen w-full py-12">
-        <div className="container h-full mx-auto grid grid-cols-12 grid-rows-12 gap-4">
-            {missions.map((mission, i) => (
-                <MissionPanel
-                    header={mission.header}
-                    mission={mission.mission}
-                    classes={mission.classes}
-                    image={mission.image}
-                    number={i+1}
-                    key={i}
-                />
-            ))}
+        <div className="container h-full mx-auto flex flex-col justify-start items-start">
+            <div className="flex">
+                <p>header</p>
+            </div>
+            <div className="flex flex-row justify-start items-start gap-4">
+                {missions.map((mission, i) => (
+                    <MissionPanel
+                        header={mission.header}
+                        mission={mission.mission}
+                        classes={mission.classes}
+                        image={mission.image}
+                        number={i+1}
+                        key={i}
+                    />
+                ))}
+            </div>
         </div>
     </section>
         
@@ -31,7 +36,7 @@ export default function Missions() {
 
 const MissionPanel = ({mission, classes, image, header, number}: Props) => {
     return (
-        <div className={`${header ? 'col-span-6 row-span-12' : 'col-span-6 row-span-6'} bg-primary rounded-3xl relative overflow-hidden`}>
+        <div className={`${header ? 'h-[450px] w-[600px]' : 'w-[600px] h-[450px]'} bg-primary rounded-3xl relative overflow-hidden`}>
             {header && (
                 <div className="h-32 ml-5 flex flex-col justify-center items-start mt-10">
                     <p className="text-6xl font-extrabold text-[#0c0c0c] font-mont">{header}</p>

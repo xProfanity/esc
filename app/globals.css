@@ -22,3 +22,15 @@
     background: linear-gradient(176deg, rgba(50,205,50,1) 47%, rgba(65, 128, 70, 1) 75%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#32cd32",endColorstr="#283f4f",GradientType=1);
 }
+
+.object-panel::-webkit-scrollbar {
+    width: 4px;
+}
+
+.object-panel::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.object-panel::-webkit-scrollbar-thumb {
+    background: #ccc;
+}
