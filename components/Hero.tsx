@@ -1,23 +1,17 @@
 "use client"
 
-import { rainbow, silhouette, street } from "@/assets"
+import { silhouette, street } from "@/assets"
 import { base } from "@/context/store"
 import { motion } from "framer-motion"
 import Image from "next/image"
 import { useSnapshot } from "valtio"
+import { BackgroundRainbow } from "."
 
 export default function Hero() {
 
   return (
     <section className="h-[120vh] max-h-[924px] w-full relative mt-5 z-10">
-        <div className="absolute z-0 h-full w-full ">
-            <Image
-                src={rainbow}
-                fill
-                alt="rainbow"
-                className="object-cover"
-            />
-        </div>
+        <BackgroundRainbow />
         <div className="h-full w-full relative z-10 backdrop-blur-xl">
             <div className="h-full my-auto container mx-auto flex flex-col lg:flex-row justify-between item-center">
                     <div className="w-full h-full flex flex-col justify-start items-center sm:items-start gap-10 lg:justify-center mt-0 lg:-mt-10">

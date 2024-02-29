@@ -17,8 +17,8 @@ export default function Header() {
     const animateTextColor = {color: snap.darkmode ? '#fff' : '#011222'}
 
   return (
-    <motion.header animate={{backgroundColor: snap.darkmode ? "#011222" : "#fff"}} className="fixed lg:absolute top-0 left-0 z-50 h-20 w-full flex flex-col justify-center items-center backdrop-blur-none lg:bg-transparent lg:backdrop-blur-xl shadow-xl">
-        <nav className="h-full w-11/12 flex flex-row justify-between items-center">
+    <motion.header className="fixed top-0 left-0 z-50 h-20 w-full flex flex-col justify-center items-center backdrop-blur-md border-b">
+        <nav className="h-full container mx-auto flex flex-row justify-between items-center">
             <div className="relative h-20 w-28">
                 <Image
                     src={logo}
