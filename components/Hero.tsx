@@ -12,18 +12,23 @@ export default function Hero() {
   return (
     <section className="h-[120vh] max-h-[924px] w-full relative mt-5 z-10">
         <BackgroundRainbow />
-        <div className="h-full w-full relative z-10 backdrop-blur-xl">
-            <div className="h-full my-auto container mx-auto flex flex-col lg:flex-row justify-between item-center">
-                    <div className="w-full h-full flex flex-col justify-start items-center sm:items-start gap-10 lg:justify-center mt-0 lg:-mt-10">
-                        <Objectives />
-                        <Niche />
-                        <CTA />
-                    </div>
-                    <div className="relative w-full h-full mt-0 lg:-mt-10">
-                        <HeroImage />
-                    </div>
-                    {/* <SomeSVG />
-                    <Contacts /> */}
+        <div className="h-full w-full relative z-10 backdrop-blur-x">
+            <div className="h-full flex flex-col justify-start items-start">
+                <div className="my-auto container mx-auto flex flex-col lg:flex-row justify-between item-center">
+                        <div className="w-full h-full flex flex-col justify-start items-center sm:items-start gap-10 lg:justify-center mt-0 lg:-mt-10">
+                            <Objectives />
+                            <Niche />
+                            <CTA />
+                        </div>
+                        <div className="relative w-full h-full mt-0 lg:-mt-10">
+                            <HeroImage />
+                        </div>
+                        {/* <SomeSVG />
+                        <Contacts /> */}
+                </div>
+                <div className="flex">
+                    {/* <h2>banners</h2> */}
+                </div>
             </div>
         </div>
     </section>
@@ -35,7 +40,7 @@ const Niche = () => {
     
     return (
         <div className="flex flex-col justify-center items-center">
-            <motion.p animate={{color: snap.darkmode ? '#a855f7' : '#a855f7'}}  className="text-3xl sm:text-5xl xl:text-6xl 2xl:text-7xl font-extrabold font-mont uppercase text-center sm:text-left">Empowering Communities for a Sustainable Future</motion.p>
+            <motion.p className="text-3xl text-accent sm:text-5xl font-extrabold font-mont uppercase text-center sm:text-left">Empowering Communities for a Sustainable Future</motion.p>
         </div>
     )
 }
@@ -45,7 +50,7 @@ const HeroImage = () => {
 
     return (
         <div className="relative rounded-3xl z-10 h-full lg:flex lg:flex-col lg:justify-center">
-            <div className="absolute h-[300px] sm:h-[350px] md:h-[400px] lg:h-[350px] xl:h-[400px] 2xl:h-[500px] w-5/6 sm:w-[450px] md:w-[500px] lg:w-[450px] xl:w-[500px] 2xl:w-[600px] left-1/2 -translate-x-1/2 sm:-translate-x-1/3 lg:-translate-x-1/3 lg:right-0 mt-14 sm:mt-10 md:mt-0">
+            <div className="absolute h-[300px] sm:h-[350px] md:h-[400px] lg:h-[350px] xl:h-[400px] w-5/6 sm:w-[450px] md:w-[500px] lg:w-[450px] xl:w-[500px] left-1/2 -translate-x-1/2 sm:-translate-x-1/3 lg:-translate-x-1/3 lg:right-0 mt-14 sm:mt-10 md:mt-0">
                 <Image
                     src={street}
                     fill
@@ -57,7 +62,7 @@ const HeroImage = () => {
                     <motion.p animate={{color: snap.darkmode ? '#fff' : "#32cd32"}} className="text-lg font-bold font-mont">ESTO</motion.p>
                     <motion.p animate={{color: snap.darkmode ? '#fff' : "#32cd32"}} className="text-lg font-bold font-mont">July 2017</motion.p>
                 </div>
-                    <div className="absolute sm:h-[250px] md:h-[300px] lg:h-[250px] xl:h-[300px] 2xl:h-[400px] sm:w-[300px] md:w-[350px] lg:w-[300px] xl:w-[350px] 2xl:w-[450px] rounded-3xl bottom-0 sm:left-0 lg:right-0 xl:left-0 sm:-translate-x-1/2 lg:-translate-x-1/3 xl:-translate-x-1/3 md:-translate-y-1/4 lg:translate-y-1/3 overflow-hidden hidden sm:block">
+                    <div className="absolute sm:h-[250px] md:h-[300px] lg:h-[250px] xl:h-[300px] sm:w-[300px] md:w-[350px] lg:w-[300px] xl:w-[350px] rounded-3xl bottom-0 sm:left-0 lg:right-0 xl:left-0 sm:-translate-x-1/2 lg:-translate-x-1/3 xl:-translate-x-1/3 md:-translate-y-1/4 lg:translate-y-1/3 overflow-hidden hidden sm:block shadow-md shadow-black">
                         <Image
                             src={silhouette}
                             fill
@@ -77,7 +82,7 @@ const CTA = () => {
 
     return (
         <div className="flex flex-col justify-center items-start">
-            <motion.button animate={{color: snap.darkmode ? '#fff' : "#011222"}} type="button" className="bg-primary text-lg 2xl:text-xl h-16 2xl:h-24 w-44 2xl:w-64 rounded-2xl md:rounded-3xl lg:rounded-full font-mont font-bold">
+            <motion.button animate={{color: snap.darkmode ? '#fff' : "#011222"}} type="button" className="bg-primary text-sm h-16 w-36 rounded-2xl md:rounded-3xl lg:rounded-3xl font-mont font-bold">
                 Watch Video
             </motion.button>
         </div>
@@ -126,7 +131,7 @@ const Objectives = () => {
                         <div className="h-[calc(100%-8px)] w-[2px] bg-gray-500"></div>
                     </div>
                     <div className="h-full w-auto flex flex-col justify-start items-start ml-2 gap-1">
-                        <motion.p animate={{color: snap.darkmode ? '#fff' : "#011222"}} className="font-mont text-lg sm:text-xl [1280px]:text-2xl font-semibold [1280px]:font-extrabold 2xl:text-3xl">{objective.objective}</motion.p>
+                        <p className="text-accent font-mont text-lg sm:text-xl [1280px]:text-2xl font-semibold [1280px]:font-extrabold 2xl:text-3xl">{objective.objective}</p>
                         <motion.p animate={{color: snap.darkmode ? '#fff' : "#011222",}} className="font-mont text-xs sm:text-sm 2xl:text-base font-medium">{objective.text}</motion.p>
                     </div>
                 </div>

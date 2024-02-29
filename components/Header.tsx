@@ -17,15 +17,17 @@ export default function Header() {
     const animateTextColor = {color: snap.darkmode ? '#fff' : '#011222'}
 
   return (
-    <motion.header className="fixed top-0 left-0 z-50 h-20 w-full flex flex-col justify-center items-center backdrop-blur-md border-b">
+    <motion.header className="fixed top-0 left-0 z-50 h-20 w-full flex flex-col justify-center items-center backdrop-blur-[3px]">
         <nav className="h-full container mx-auto flex flex-row justify-between items-center">
             <div className="relative h-20 w-28">
-                <Image
-                    src={logo}
-                    fill
-                    alt="logo"
-                    className="object-contain"
-                />
+                <Link href={"/"}>
+                    <Image
+                        src={logo}
+                        fill
+                        alt="logo"
+                        className="object-contain"
+                    />
+                </Link>
             </div>
 
             <div className="md:w-4/5 lg:w-3/5 h-full md:flex hidden flex-row justify-between items-center">

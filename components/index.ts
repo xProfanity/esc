@@ -1,4 +1,3 @@
-import AfterHero from "./AfterHero";
 import BackgroundRainbow from "./BackgroundRainbow";
 import CoreValues from "./CoreValues";
 import Drawer from "./Drawer";
@@ -7,7 +6,8 @@ import Header from "./Header";
 import Hero from "./Hero";
 import Map from "./Map";
 import Missions from "./Missions";
+import Objectives from "./Objectives";
 import ThemeButton from "./ThemeButton";
 
-export { AfterHero, BackgroundRainbow, CoreValues, Drawer, FundingAndVision, Header, Hero, Map, Missions, ThemeButton };
+export { BackgroundRainbow, CoreValues, Drawer, FundingAndVision, Header, Hero, Map, Missions, Objectives, ThemeButton };
 

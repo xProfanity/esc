@@ -1,10 +1,10 @@
-import { AfterHero, CoreValues, FundingAndVision, Hero, Map, Missions } from "@/components";
+import { CoreValues, FundingAndVision, Hero, Map, Missions, Objectives } from "@/components";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <AfterHero />
+      <Objectives />
       <Missions />
       <CoreValues />
       <FundingAndVision />

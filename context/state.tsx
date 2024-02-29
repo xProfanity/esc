@@ -1,6 +1,6 @@
 "use client"
 
 export const initialBaseState = {
-    darkmode: JSON.parse(localStorage.getItem("darkmode") as string) as boolean || true as boolean,
+    darkmode: typeof window !== 'undefined' && JSON.parse(localStorage.getItem("darkmode") as string) as boolean || true,
     drawerOpen: false,
 }

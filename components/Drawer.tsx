@@ -17,7 +17,7 @@ export default function Drawer() {
         className="fixed h-full w-4/5 sm:w-1/2 z-40 right-0 bottom-0 backdrop-blur-2xl flex md:hidden flex-col justify-end items-center">
         <div className="h-[calc(100%-5rem)] w-full flex flex-col justify-start">
             {Navlinks.map((item, i) => (
-                <p className="capitalize h-10 w-full py-5 px-5 hover:bg-[#011222] text-white font-bold text-3xl font-mont text-end">
+                <p key={i} className="capitalize h-10 w-full py-5 px-5 hover:bg-[#011222] text-white font-bold text-3xl font-mont text-end">
                     <Link href={item.link}>
                         {item.name}
                     </Link>

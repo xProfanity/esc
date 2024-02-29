@@ -3,12 +3,12 @@ import Image from 'next/image'
 
 export default function BackgroundRainbow() {
   return (
-    <div className="absolute z-0 h-full w-full ">
+    <div className="absolute z-0 h-full w-full">
         <Image
             src={rainbow}
             fill
             alt="rainbow"
-            className="object-cover"
+            className="object-contain"
         />
     </div>
   )

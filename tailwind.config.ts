@@ -17,7 +17,8 @@ const config: Config = {
         'mont': ["Montserrat", "sans-serif"]
       },
       colors: {
-        primary: "#32cd32"
+        primary: "#32cd32",
+        accent: '#a855f7'
       }
     },
   },
