@@ -45,7 +45,7 @@ const Niche = () => {
     return (
         <div className="flex flex-col justify-center items-center">
             <motion.p animate={{color: snap.darkmode ? '#e3e3e7' : '#011222'}} className="text-3xl sm:text-5xl font-extrabold font-mont uppercase text-center sm:text-left">Empowering Communities for a Sustainable Future</motion.p>
-            <motion.p animate={{color: snap.darkmode ? '#e3e3e7' : '#011222'}} className="text-lg font-bold font-mont capitalize text-center sm:text-left w-full mt-10 text-[#e3e3e7]">Strengthening communities to face challenges head-on and thrive.</motion.p>
+            <motion.p animate={{color: snap.darkmode ? '#ccc' : '#011222'}} className="text-lg font-bold font-mont capitalize text-center sm:text-left w-full mt-10">Strengthening communities to face challenges head-on and thrive.</motion.p>
         </div>
     )
 }

@@ -57,15 +57,15 @@ export const missions = [
 
 export const Navlinks = [
   {
-    name: "contact",
-    link: '/contact'
+    name: "funding",
+    link: '/funding'
   },
   {
     name: "about us",
     link: '/about-us'
   },
   {
-    name: "funding",
-    link: '/funding'
-  }
+    name: "contact",
+    link: '/contact'
+  },
 ]
