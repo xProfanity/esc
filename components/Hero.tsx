@@ -10,13 +10,13 @@ import { BackgroundRainbow } from "."
 export default function Hero() {
 
   return (
-    <section className="h-[120vh] max-h-[924px] w-full relative mt-5 z-10">
+    <section className="h-[120vh] max-h-[924px] w-full relative z-10">
         <BackgroundRainbow />
         <div className="h-full w-full relative z-10">
             <div className="h-full flex flex-col justify-start items-start">
-                <div className="lg:my-auto container mx-auto flex flex-col lg:flex-row justify-between item-center">
-                        <div className="w-full h-full flex flex-col justify-start items-center sm:items-start gap-10 lg:justify-center mt-0 lg:-mt-10">
-                            <Objectives />
+                <div className="lg:my-auto container mx-auto flex flex-col lg:flex-row justify-between item-center relative z-0">
+                        <div className="w-full h-full flex flex-col justify-start items-center sm:items-start gap-10 lg:justify-center mt-56 lg:-mt-10">
+                            {/* <Objectives /> */}
                             <Niche />
                             <CTA />
                         </div>
@@ -26,8 +26,12 @@ export default function Hero() {
                         {/* <SomeSVG />
                         <Contacts /> */}
                 </div>
-                <div className="flex">
-                    {/* <h2>banners</h2> */}
+                <div className="flex w-full -mt-10 absolute bottom-0 -z-10 lg:relative lg:z-10">
+                    <div className="h-12 w-[120vw] -rotate-6 -ml-10 bg-accent flex flex-col justify-center items-center relative">
+                        <p className="font-bold font-mont text-xl text-nowrap text-center">
+                            ● The Registered trustees of Environment, Society & Culture (ESC) ● The Registered trustees of Environment, Society & Culture (ESC) ● The Registered trustees of Environment, Society & Culture (ESC) ● The Registered trustees of Environment, Society & Culture (ESC) ●
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -40,7 +44,8 @@ const Niche = () => {
     
     return (
         <div className="flex flex-col justify-center items-center">
-            <motion.p className="text-3xl text-accent sm:text-5xl font-extrabold font-mont uppercase text-center sm:text-left">Empowering Communities for a Sustainable Future</motion.p>
+            <motion.p animate={{color: snap.darkmode ? '#e3e3e7' : '#011222'}} className="text-3xl sm:text-5xl font-extrabold font-mont uppercase text-center sm:text-left">Empowering Communities for a Sustainable Future</motion.p>
+            <motion.p animate={{color: snap.darkmode ? '#e3e3e7' : '#011222'}} className="text-lg font-bold font-mont capitalize text-center sm:text-left w-full mt-10 text-[#e3e3e7]">Strengthening communities to face challenges head-on and thrive.</motion.p>
         </div>
     )
 }
@@ -83,7 +88,7 @@ const CTA = () => {
     return (
         <div className="flex flex-col justify-center items-start">
             <motion.button animate={{color: snap.darkmode ? '#fff' : "#011222"}} type="button" className="bg-primary text-sm h-16 w-36 rounded-2xl md:rounded-3xl lg:rounded-3xl font-mont font-bold">
-                Watch Video
+                Get Started
             </motion.button>
         </div>
     )

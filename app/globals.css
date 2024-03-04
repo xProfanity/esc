@@ -34,3 +34,7 @@
 .object-panel::-webkit-scrollbar-thumb {
     background: #ccc;
 }
+
+.hero-bg {
+    background-image: linear-gradient(to right top, #011222, #003d5c, #006e7b, #00a06e, #32cd32);
+}

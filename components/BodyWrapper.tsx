@@ -13,7 +13,7 @@ export default function BodyWrapper({children}: Readonly<{
     const snap = useSnapshot(base)
 
   return (
-    <motion.main animate={{backgroundColor: snap.darkmode ? '#011222' : '#fff'}} className={`overflow-hidden relative`}>
+    <motion.main animate={{backgroundColor: snap.darkmode ? '#011222' : '#e3e3e7'}} className={`overflow-hidden relative`}>
         {children}
     </motion.main>
   )

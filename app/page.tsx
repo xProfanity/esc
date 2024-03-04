@@ -1,4 +1,4 @@
-import { CoreValues, FundingAndVision, Hero, Map, Missions, Objectives } from "@/components";
+import { Contacts, CoreValues, FundingAndVision, Hero, Missions, Objectives } from "@/components";
 
 export default function Home() {
   return (
@@ -8,7 +8,7 @@ export default function Home() {
       <Missions />
       <CoreValues />
       <FundingAndVision />
-      <Map />
+      <Contacts />
     </>
   )
 }

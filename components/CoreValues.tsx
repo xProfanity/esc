@@ -1,11 +1,18 @@
-import { integrity, logo, professionalism, quality, transparency } from "@/assets";
+"use client"
+
+import { motion } from "framer-motion";
 import Image from "next/image";
+import { useSnapshot } from "valtio";
+
+import { integrity, logo, professionalism, quality, transparency } from "@/assets";
+import { base } from "@/context/store";
 
 export default function CoreValues() {
+    const snap = useSnapshot(base)
   return (
-    <section className="h-screen w-full">
-        <div className="h-full container mx-auto flex flex-col justify-start items-center">
-            <div className="relative h-32 w-48">
+    <section className="h-screen w-full mt-56">
+        <div className="h-full container mx-auto flex flex-col justify-center items-center">
+            <div className="relative h-48 w-48">
                 <Image
                     src={logo}
                     fill
@@ -15,10 +22,10 @@ export default function CoreValues() {
             </div>
 
             <div className="mt-5">
-                <p className="text-6xl text-white font-bold font-mont">Our Core Values.</p>
+                <motion.p animate={{color: snap.darkmode ? '#e3e3e7' : '#011222'}} className="text-4xl md:text-5xl lg:text-6xl font-bold font-mont">Our Core Values.</motion.p>
             </div>
 
-            <div className="w-full flex flex-row justify-around items-center mt-20">
+            <div className="w-full flex flex-row flex-wrap gap-y-10 justify-around items-center mt-20">
                 <div className="h-44 w-44 flex flex-col justify-center items-center bg-primary rounded-3xl">
                     <div className="relative h-24 w-24">
                         <Image
