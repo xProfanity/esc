@@ -18,7 +18,7 @@ export default function Footer() {
 
         <ul className="mt-20 w-full flex flex-row justify-center items-center gap-10">
             {Navlinks.map((item, i) => (
-                <li className="text-[#e3e3e7] capitalize font-bold font-mont">
+                <li key={i} className="text-[#e3e3e7] capitalize font-bold font-mont">
                     <Link href={item.link}>{item.name}</Link>
                 </li>
             ))}

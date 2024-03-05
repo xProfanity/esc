@@ -11,7 +11,7 @@ import Missions from "./home/Missions";
 import Objectives from "./home/Objectives";
 import ThemeButton from "./home/ThemeButton";
 
-import Thumbnail from "./posts/thumbnail";
+import Thumbnail from "./posts/Thumbnail";
 
 export { BackgroundRainbow, Contacts, CoreValues, Drawer, Footer, FundingAndVision, Header, Hero, Missions, Objectives, ThemeButton, Thumbnail };
 
