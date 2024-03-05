@@ -5,7 +5,7 @@ import { base } from "@/context/store"
 import { motion } from "framer-motion"
 import Image from "next/image"
 import { useSnapshot } from "valtio"
-import { BackgroundRainbow } from "."
+import { BackgroundRainbow } from ".."
 
 export default function Hero() {
 
