@@ -10,8 +10,8 @@ type Slug = {
 }
 
 type Author = {
-    _ref: string;
-    _type: string;
+    name: string;
+    image: SanityImage;
 }
 
 type BodyChildren = {
@@ -45,6 +45,7 @@ export interface Post {
     slug: Slug;
     video: SanityImage | null;
     body: Body[];
+    synopsis: string;
     title: string;
     _id: string;
     _rev: string;
