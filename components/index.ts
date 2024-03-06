@@ -11,8 +11,10 @@ import Missions from "./home/Missions";
 import Objectives from "./home/Objectives";
 import ThemeButton from "./home/ThemeButton";
 
+import PostCard from "./posts/PostCard";
+import RecentPosts from "./posts/RecentPosts";
 import Thumbnail from "./posts/Thumbnail";
 import ThumbnailContent from "./posts/ThumbnailContent";
 
-export { BackgroundRainbow, Contacts, CoreValues, Drawer, Footer, FundingAndVision, Header, Hero, Missions, Objectives, ThemeButton, Thumbnail, ThumbnailContent };
+export { BackgroundRainbow, Contacts, CoreValues, Drawer, Footer, FundingAndVision, Header, Hero, Missions, Objectives, PostCard, RecentPosts, ThemeButton, Thumbnail, ThumbnailContent };
 

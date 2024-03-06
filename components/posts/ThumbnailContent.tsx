@@ -28,7 +28,7 @@ export default function ThumbnailContent({featuredPost}: Props) {
         <div className="absolute z-10 h-full w-full backdrop-brightness-50 flex flex-col justify-end items-start pb-10">
             <div className="w-[95%] mx-auto flex flex-row">
                 <div className="w-3/4 flex flex-col gap-3">
-                    <p className="text-[#e3e3e7] font-semibold font-mont">Featured</p>
+                    <p className="text-[#e3e3e7] font-semibold font-mont text-lg">Featured</p>
                     <p className="text-4xl w-full text-[#e3e3e7] font-bold font-mont">{featuredPost.title}</p>
                     <p className="w-3/4 text-[#e3e3e7] text-sm">{`${fetchParagraph()?.text}`}</p>
                 </div>

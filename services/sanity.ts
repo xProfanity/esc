@@ -7,3 +7,11 @@ export async function fetchFeaturedPost() {
 
     return response
 }
+
+export async function fetchRecentPosts() {
+    const query = `*[_type == "post" && featured == false] | order(publishedAt desc)`
+
+    const response = await client.fetch(query)
+
+    return response
+}

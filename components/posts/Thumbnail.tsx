@@ -8,7 +8,7 @@ export default async function Thumbnail() {
     const post = await fetchFeaturedPost() as Post
 
     return (
-      <section className='h-screen w-full'>
+      <section className='h-screen max-h-[45rem] w-full'>
           <div className="h-[calc(100%-5rem)] container mx-auto mt-20">
             <ThumbnailContent featuredPost={post} />
           </div>
