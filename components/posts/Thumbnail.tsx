@@ -1,5 +1,6 @@
 import { Post } from "@/common";
 import { fetchFeaturedPost } from "@/services/sanity";
+import { ThumbnailContent } from "..";
 
 export default async function Thumbnail() {
 
@@ -8,8 +9,8 @@ export default async function Thumbnail() {
 
     return (
       <section className='h-screen w-full'>
-          <div className="h-[calc(100%-5rem)] container border border-purple-500 mx-auto mt-20 flex flex-col justify-center items-center">
-            <p className="text-white">{post?.title}</p>
+          <div className="h-[calc(100%-5rem)] container mx-auto mt-20">
+            <ThumbnailContent featuredPost={post} />
           </div>
       </section>
     )
@@ -18,7 +19,7 @@ export default async function Thumbnail() {
     
     return (
       <section className="h-screen w-full flex flex-col justify-center items-center">
-        <p className="text-white">Somthing went wrong</p>
+        <p className="text-white">Something went wrong</p>
       </section>
     )
   }

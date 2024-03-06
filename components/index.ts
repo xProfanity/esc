@@ -12,6 +12,7 @@ import Objectives from "./home/Objectives";
 import ThemeButton from "./home/ThemeButton";
 
 import Thumbnail from "./posts/Thumbnail";
+import ThumbnailContent from "./posts/ThumbnailContent";
 
-export { BackgroundRainbow, Contacts, CoreValues, Drawer, Footer, FundingAndVision, Header, Hero, Missions, Objectives, ThemeButton, Thumbnail };
+export { BackgroundRainbow, Contacts, CoreValues, Drawer, Footer, FundingAndVision, Header, Hero, Missions, Objectives, ThemeButton, Thumbnail, ThumbnailContent };
 

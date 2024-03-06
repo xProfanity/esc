@@ -1,6 +1,7 @@
 import blurbob from "./blurblob.svg"
 import charts from "./charts.jpg"
 import desk from "./desk.jpg"
+import DArrow from "./diagonal-arrow.svg"
 import funding from "./funding.png"
 import huddle from "./huddle.jpg"
 import integrity from "./integrity.png"
@@ -16,5 +17,5 @@ import transparency from "./transparency.png"
 import vision from "./vision.png"
 import logo from "./whitebglogo.png"
 
-export { blurbob, charts, desk, funding, huddle, integrity, leaf, logo, logoblob, masks, professionalism, quality, rainbow, silhouette, street, transparency, vision }
+export { DArrow, blurbob, charts, desk, funding, huddle, integrity, leaf, logo, logoblob, masks, professionalism, quality, rainbow, silhouette, street, transparency, vision }
 

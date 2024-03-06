@@ -43,7 +43,7 @@ export interface Post {
     featured: boolean;
     author: Author;
     slug: Slug;
-    video: SanityImage;
+    video: SanityImage | null;
     body: Body[];
     title: string;
     _id: string;
