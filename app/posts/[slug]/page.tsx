@@ -1,13 +1,17 @@
 "use client"
 
 import { Category, Post } from "@/common";
+import { base } from "@/context/store";
 import { urlFor } from "@/lib/sanity-client";
 import { fetchPostBySlug } from "@/services/sanity";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { useParams } from "next/navigation";
+import { useSnapshot } from "valtio";
 
 type Props = {
   slug: string;
+  darkmode: boolean;
 }
 
 type Params = {
@@ -16,18 +20,18 @@ type Params = {
 
 export default function Post() {
     const params = useParams() as Params
+    const {darkmode} = useSnapshot(base)
 
-  return <RenderPostPage slug={params.slug} />
+  return <RenderPostPage slug={params.slug} darkmode={darkmode} />
 }
 
-async function RenderPostPage({slug}: Props) {
+async function RenderPostPage({slug, darkmode}: Props) {
 
   try {
     const post = await fetchPostBySlug(slug) as Post
 
     let previousWasListItem = false
     let currentList = [] as string[]
-    let firstParagraph = true
 
     return (
       <section className="h-auto w-full pb-40">
@@ -41,29 +45,29 @@ async function RenderPostPage({slug}: Props) {
             />
           </div>
 
-          <div className="w-4/5 min-h-screen h-auto -mt-48 relative bg-[#e3e3e7] shadow-md rounded-3xl">
+          <motion.div animate={{backgroundColor: !darkmode ? "#e3e3e7" : "#0c0c0c"}} className="w-[95%] md:w-4/5 min-h-screen h-auto mx-auto -mt-48 relative shadow-md rounded-3xl pb-12">
             <div className="flex flex-row gap-4 mt-5 h-auto w-full px-4">
               {post.categories.map((category: Category) => (
                 <span className="mt-10 flex flex-col justify-center items-center text-accent text-sm font-mont font-bold">{category.title}</span>
               ))}
             </div>
 
-            <p className="text-5xl font-extrabold font-mont text-accent w-full px-4 mt-5">{post.title}</p>
+            <p className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-extrabold font-mont text-accent w-full px-4 mt-5">{post.title}</p>
             
             <div className="flex flex-row justify-between items-center w-full px-4 mt-10">
-              <p className="text-sm font-mont text-[#011222] font-semibold">published by {post.author.name}</p>
+              <motion.p animate={{color: darkmode ? "#e3e3e7" : "#011222"}} className="text-sm font-mont font-semibold">published by {post.author.name}</motion.p>
 
-              <p className="text-sm font-mont text-[#011222] font-semibold">{new Date(post.publishedAt).toDateString()}</p>
+              <motion.p animate={{color: darkmode ? "#e3e3e7" : "#011222"}} className="text-sm font-mont font-semibold">{new Date(post.publishedAt).toDateString()}</motion.p>
             </div>
 
-            <div className="flex flex-col gap-5 w-5/6 px-4 mt-10">
+            <div className="flex flex-col gap-5 w-full lg:w-5/6 px-2 lg:px-4 mt-10">
               {post.body.map((item, i) => {
                 switch (item.style) {
                   case "h1":
                     return (
                       <>
                         {item.children.map((span) => (
-                          <h1 className="font-bold font-mont text-[#011222] text-pretty text-4xl" key={span._key}>{span.text}</h1>
+                          <motion.h1 animate={{color: darkmode ? "#e3e3e7" : "#011222"}} className="font-bold font-mont text-pretty text-3xl md:text-4xl" key={span._key}>{span.text}</motion.h1>
                         ))}
                       </>
                     )
@@ -71,7 +75,7 @@ async function RenderPostPage({slug}: Props) {
                     return (
                       <>
                         {item.children.map((span) => (
-                          <h2 className="font-bold font-mont text-[#011222] text-pretty text-3xl" key={span._key}>{span.text}</h2>
+                          <motion.h2 animate={{color: darkmode ? "#e3e3e7" : "#011222"}} className="font-bold font-mont text-pretty text-2xl md:text-3xl" key={span._key}>{span.text}</motion.h2>
                         ))}
                       </>
                     )
@@ -79,7 +83,7 @@ async function RenderPostPage({slug}: Props) {
                     return (
                       <>
                         {item.children.map((span) => (
-                          <h3 className="font-bold font-mont text-[#011222] text-pretty text-2xl" key={span._key}>{span.text}</h3>
+                          <motion.h3 animate={{color: darkmode ? "#e3e3e7" : "#011222"}} className="font-bold font-mont text-pretty text-xl md:text-2xl" key={span._key}>{span.text}</motion.h3>
                         ))}
                       </>
                     )
@@ -87,7 +91,7 @@ async function RenderPostPage({slug}: Props) {
                     return (
                       <>
                         {item.children.map((span) => (
-                          <h4 className="font-bold font-mont text-[#011222] text-pretty text-xl" key={span._key}>{span.text}</h4>
+                          <motion.h4 animate={{color: darkmode ? "#e3e3e7" : "#011222"}} className="font-bold font-mont text-pretty text-lg md:text-xl" key={span._key}>{span.text}</motion.h4>
                         ))}
                       </>
                     )
@@ -107,7 +111,7 @@ async function RenderPostPage({slug}: Props) {
                         return (
                           <ul className="list-disc flex flex-col gap-1 w-full px-10 mx-auto">
                             {currentList.map((bullet, i) => (
-                              <li className="font-mont text-[#011222] text-base" key={i}>{bullet}</li>
+                              <motion.li animate={{color: darkmode ? "#e3e3e7" : "#011222"}} className="font-mont text-base" key={i}>{bullet}</motion.li>
                             ))}
                           </ul>
                         )
@@ -118,7 +122,7 @@ async function RenderPostPage({slug}: Props) {
                     return (
                       <>
                         {item.children.map((span) => (
-                          <p className="font-mont text-[#011222] text-base" key={span._key}>{span.text}</p>
+                          <motion.p animate={{color: darkmode ? "#e3e3e7" : "#011222"}} className="font-mont text-base" key={span._key}>{span.text}</motion.p>
                         ))}
                       </>
                     )
@@ -126,7 +130,7 @@ async function RenderPostPage({slug}: Props) {
                     return (
                       <>
                         {item.children.map((span) => (
-                          <p key={span._key}>{span.text}</p>
+                          <motion.p animate={{color: darkmode ? "#e3e3e7" : "#011222"}} key={span._key}>{span.text}</motion.p>
                         ))}
                       </>
                     )
@@ -145,7 +149,7 @@ async function RenderPostPage({slug}: Props) {
               })}
             </div>
 
-          </div>
+          </motion.div>
         </div>
       </section>
     )
@@ -153,7 +157,7 @@ async function RenderPostPage({slug}: Props) {
     console.log('error', error)
     return (
       <section className="h-screen w-full flex flex-col justify-center items-center">
-        <p className="text-[#011222] font-mont">Something went wrong</p>
+        <motion.p animate={{color: darkmode ? "#e3e3e7" : "#011222"}} className="font-mont">Something went wrong</motion.p>
       </section>
     )
   }
