@@ -2,6 +2,7 @@ import { DArrow } from "@/assets";
 import { Post } from "@/common";
 import { urlFor } from "@/lib/sanity-client";
 import Image from "next/image";
+import Link from "next/link";
 
 interface Props {
     featuredPost: Post;
@@ -33,7 +34,7 @@ export default function ThumbnailContent({featuredPost}: Props) {
                     <p className="w-3/4 text-[#e3e3e7] text-sm">{`${fetchParagraph()?.text}`}</p>
                 </div>
                 <div className="w-1/4 flex flex-col justify-center items-end">
-                    <button type="button">
+                    <Link type="button" href={`/posts/${featuredPost.slug.current}`}>
                         <Image
                             src={DArrow}
                             height={80}
@@ -41,7 +42,7 @@ export default function ThumbnailContent({featuredPost}: Props) {
                             alt="diagonal arrow"
                             className="object-contain"
                         />
-                    </button>
+                    </Link>
                 </div>
             </div>
         </div>

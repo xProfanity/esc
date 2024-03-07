@@ -4,6 +4,7 @@ import { silhouette, street } from "@/assets"
 import { base } from "@/context/store"
 import { motion } from "framer-motion"
 import Image from "next/image"
+import Link from "next/link"
 import { useSnapshot } from "valtio"
 import { BackgroundRainbow } from ".."
 
@@ -87,9 +88,11 @@ const CTA = () => {
 
     return (
         <div className="flex flex-col justify-center items-start">
-            <motion.button animate={{color: snap.darkmode ? '#fff' : "#011222"}} type="button" className="bg-primary text-sm h-16 w-36 rounded-2xl md:rounded-3xl lg:rounded-3xl font-mont font-bold">
-                Get Started
-            </motion.button>
+            <Link href={"/posts"}>
+                <motion.button animate={{color: snap.darkmode ? '#fff' : "#011222"}} type="button" className="bg-primary text-sm h-16 w-36 rounded-2xl md:rounded-3xl lg:rounded-3xl font-mont font-bold">
+                        Read Blogs
+                </motion.button>
+            </Link>
         </div>
     )
 }

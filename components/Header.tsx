@@ -33,7 +33,7 @@ export default function Header() {
             <div className="md:w-4/5 lg:w-1/2 h-full md:flex hidden flex-row justify-between items-center">
                 <ul className="flex flex-row justify-around items-center w-full">
                     {Navlinks.map((item, i) => (
-                        <motion.li animate={animateTextColor} key={i} className="font-semibold capitalize">
+                        <motion.li animate={animateTextColor} key={i} className="font-semibold capitalize font-mont">
                             <Link href={item.link}>{item.name}</Link>
                         </motion.li>
                     ))}

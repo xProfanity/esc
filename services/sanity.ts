@@ -21,3 +21,21 @@ export async function fetchRecentPosts() {
 
     return response
 }
+
+export async function fetchPostBySlug(slug: string) {
+    const query = `*[_type == "post" && slug.current == "${slug}"][0] {
+        ...,
+        author -> {
+            name, image
+        },
+        categories[] -> {
+            title,
+            description,
+            _id
+        }
+    }`
+
+    const response = await client.fetch(query)
+
+    return response
+}

@@ -1,7 +1,7 @@
 type Category = {
-    _ref: string;
-    _type: string;
-    _key: string;
+    title: string;
+    description: string;
+    _id: string;
 }
 
 type Slug = {
@@ -24,7 +24,8 @@ type Body = {
     _type: string;
     style: string;
     _key: string;
-    children: BodyChildren[]
+    children: BodyChildren[];
+    asset: SanityImage;
 }
 
 export interface SanityImage {
