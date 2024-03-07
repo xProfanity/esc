@@ -79,7 +79,9 @@ export default function Contacts() {
             )}
 
             {loadError && (
-                <p className="text-red-500 text-lg font-mont font-bold">Error loading map</p>
+                <div className="h-full w-full border-2 rounded-3xl flex flex-col justify-center items-center">
+                    <p className="text-red-500 text-lg font-mont font-bold">Error loading map</p>
+                </div>
             )}
         </div>
     </section>

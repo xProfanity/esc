@@ -22,12 +22,15 @@ export default function Post() {
 
 async function RenderPostPage({slug}: Props) {
 
-
   try {
     const post = await fetchPostBySlug(slug) as Post
 
+    let previousWasListItem = false
+    let currentList = [] as string[]
+    let firstParagraph = true
+
     return (
-      <section className="h-auto w-full">
+      <section className="h-auto w-full pb-40">
         <div className="h-auto container mt-20 mx-auto">
           <div className="relative w-full h-screen max-h-[45rem]">
             <Image
@@ -38,14 +41,14 @@ async function RenderPostPage({slug}: Props) {
             />
           </div>
 
-          <div className="w-4/5 min-h-screen h-auto -mt-48 relative bg-[#e3e3e7] mx-auto shadow-md rounded-3xl">
+          <div className="w-4/5 min-h-screen h-auto -mt-48 relative bg-[#e3e3e7] shadow-md rounded-3xl">
             <div className="flex flex-row gap-4 mt-5 h-auto w-full px-4">
               {post.categories.map((category: Category) => (
-                <span className="h-10 mt-10 w-28 flex flex-col justify-center items-center bg-accent text-[#e3e3e7] text-sm font-mont font-bold">{category.title}</span>
+                <span className="mt-10 flex flex-col justify-center items-center text-accent text-sm font-mont font-bold">{category.title}</span>
               ))}
             </div>
 
-            <p className="text-5xl font-extrabold font-mont text-[#011222] w-full px-4 mt-5">{post.title}</p>
+            <p className="text-5xl font-extrabold font-mont text-accent w-full px-4 mt-5">{post.title}</p>
             
             <div className="flex flex-row justify-between items-center w-full px-4 mt-10">
               <p className="text-sm font-mont text-[#011222] font-semibold">published by {post.author.name}</p>
@@ -53,8 +56,8 @@ async function RenderPostPage({slug}: Props) {
               <p className="text-sm font-mont text-[#011222] font-semibold">{new Date(post.publishedAt).toDateString()}</p>
             </div>
 
-            <div className="flex flex-col gap-10 w-full px-4 mt-10">
-              {post.body.map((item) => {
+            <div className="flex flex-col gap-5 w-5/6 px-4 mt-10">
+              {post.body.map((item, i) => {
                 switch (item.style) {
                   case "h1":
                     return (
@@ -89,10 +92,33 @@ async function RenderPostPage({slug}: Props) {
                       </>
                     )
                   case "normal":
+                    if(item.listItem) {
+                      if(!previousWasListItem) {
+                        currentList = []
+                      }
+
+                      currentList.push(item.children[0].text)
+
+                      previousWasListItem = true
+
+                      if(!post.body[i+1].listItem || i === post.body.length -1) {
+                        previousWasListItem = false
+
+                        return (
+                          <ul className="list-disc flex flex-col gap-1 w-full px-10 mx-auto">
+                            {currentList.map((bullet, i) => (
+                              <li className="font-mont text-[#011222] text-base" key={i}>{bullet}</li>
+                            ))}
+                          </ul>
+                        )
+                      }
+
+                      return null
+                    }
                     return (
                       <>
                         {item.children.map((span) => (
-                          <p className="font-mont text-[#011222] text-lg" key={span._key}>{span.text}</p>
+                          <p className="font-mont text-[#011222] text-base" key={span._key}>{span.text}</p>
                         ))}
                       </>
                     )

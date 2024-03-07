@@ -26,6 +26,7 @@ type Body = {
     _key: string;
     children: BodyChildren[];
     asset: SanityImage;
+    listItem: string | null;
 }
 
 export interface SanityImage {

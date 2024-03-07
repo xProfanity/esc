@@ -1,5 +1,6 @@
 import { fetchRecentPosts } from "@/services/sanity"
 
+import RecentPostsText from "@/app/posts/RecentPostsText"
 import { Post } from "@/common"
 import { PostCard } from ".."
 
@@ -11,7 +12,7 @@ export default async function RecentPosts() {
         return (
             <section className="h-auto w-full relative pb-36">
                 <div className="container mx-auto flex flex-col px-10">
-                    <p className="text-2xl font-bold font-mont mx-auto md:mx-0">Recent blog Posts</p>
+                    <RecentPostsText />
     
                     <div className="h-auto w-full flex flex-row flex-wrap gap-6 mt-4">
                         {posts.map((post) => (
@@ -19,7 +20,7 @@ export default async function RecentPosts() {
                                 <PostCard post={post} />
                             </div>
                         ))}
-                    </div>
+                    R</div>
                 </div>
             </section>
         )

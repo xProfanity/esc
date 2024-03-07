@@ -90,7 +90,7 @@ const CTA = () => {
         <div className="flex flex-col justify-center items-start">
             <Link href={"/posts"}>
                 <motion.button animate={{color: snap.darkmode ? '#fff' : "#011222"}} type="button" className="bg-primary text-sm h-16 w-36 rounded-2xl md:rounded-3xl lg:rounded-3xl font-mont font-bold">
-                        Read Blogs
+                        Read Posts
                 </motion.button>
             </Link>
         </div>

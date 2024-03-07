@@ -1,13 +1,21 @@
+"use client"
+
 import { Post } from "@/common";
+import { base } from "@/context/store";
 import { urlFor } from "@/lib/sanity-client";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { useSnapshot } from "valtio";
 
 type Props = {
     post: Post;
 }
 
 export default function PostCard({post}: Props) {
+
+    const {darkmode} = useSnapshot(base)
+
   return (
     <div className="w-full flex flex-col">
         <div className="relative w-full h-[280px]">
@@ -19,11 +27,11 @@ export default function PostCard({post}: Props) {
             />
         </div>
 
-        <Link href={"/"}>
-            <p className="text-sm hover:underline font-bold font-mont mt-4 h-16 px-2 text-[#011222]">{post.title}</p>
+        <Link href={`/posts/${post.slug.current}`}>
+            <motion.p animate={{color: darkmode ? "#e3e3e7" : "#011222"}} className="text-sm hover:underline font-bold font-mont mt-4 h-16 px-2">{post.title}</motion.p>
         </Link>
 
-        <p className="text-sm font-mont px-2 text-[#011222] h-20">{post.synopsis}</p>
+        <motion.p animate={{color: darkmode ? "#e3e3e7" : "#011222"}} className="text-sm font-mont px-2 h-20">{post.synopsis}</motion.p>
 
         <div className="mt-5 flex flex-row px-2 justify-start items-center gap-2">
             <Image
@@ -34,11 +42,11 @@ export default function PostCard({post}: Props) {
                 className="object-cover rounded-full"
             />
 
-            <p className="text-sm font-semibold font-mont text-[#011222]">{post.author.name}</p>
+            <motion.p animate={{color: darkmode ? "#e3e3e7" : "#011222"}} className="text-sm font-semibold font-mont">{post.author.name}</motion.p>
             
-            <span className="text-[#011222]">●</span>
+            <motion.span animate={{color: darkmode ? "#e3e3e7" : "#011222"}}>●</motion.span>
 
-            <p className="text-sm text-[#011222] font-mont font-semibold">{new Date(post.publishedAt).toDateString()}</p>
+            <motion.p animate={{color: darkmode ? "#e3e3e7" : "#011222"}} className="text-sm font-mont font-semibold">{new Date(post.publishedAt).toDateString()}</motion.p>
             
         </div>
     </div>

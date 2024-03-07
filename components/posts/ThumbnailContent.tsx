@@ -26,22 +26,30 @@ export default function ThumbnailContent({featuredPost}: Props) {
             />
         </div>
 
-        <div className="absolute z-10 h-full w-full backdrop-brightness-50 flex flex-col justify-end items-start pb-10">
-            <div className="w-[95%] mx-auto flex flex-row">
-                <div className="w-3/4 flex flex-col gap-3">
+        <div className="absolute z-10 h-full w-full backdrop-brightness-[.3] md:backdrop-brightness-50 flex flex-col justify-end items-start pb-10">
+            <div className="w-[95%] mx-auto flex flex-col md:flex-row gap-8 md:gap-0">
+                <div className="w-full md:w-4/5 lg:w-3/4 flex flex-col gap-3">
                     <p className="text-[#e3e3e7] font-semibold font-mont text-lg">Featured</p>
-                    <p className="text-4xl w-full text-[#e3e3e7] font-bold font-mont">{featuredPost.title}</p>
-                    <p className="w-3/4 text-[#e3e3e7] text-sm">{`${fetchParagraph()?.text}`}</p>
+                    <p className="text-xl md:text-2xl lg:text-3xl xl:text-4xl w-full text-[#e3e3e7] font-extrabold md:font-bold font-mont">{featuredPost.title}</p>
+                    <p className="w-full md:w-3/4 text-[#e3e3e7] text-xs lg:text-sm">{`${fetchParagraph()?.text}`}</p>
                 </div>
-                <div className="w-1/4 flex flex-col justify-center items-end">
+                <div className="w-full md:w-1/5 lg:w-1/4 hidden md:flex flex-col justify-center items-end">
                     <Link type="button" href={`/posts/${featuredPost.slug.current}`}>
-                        <Image
-                            src={DArrow}
-                            height={80}
-                            width={80}
-                            alt="diagonal arrow"
-                            className="object-contain"
-                        />
+                        <div className="relative h-[60px] xl:h-[80px] w-[60px] xl:w-[80px]">
+                            <Image
+                                src={DArrow}
+                                fill
+                                alt="diagonal arrow"
+                                className="object-contain"
+                            />
+                        </div>
+                    </Link>
+                </div>
+                <div className="w-full md:w-1/5 lg:w-1/4 flex md:hidden flex-col justify-center items-start">
+                    <Link type="button" href={`/posts/${featuredPost.slug.current}`}>
+                        <button type="button" className="p-4 bg-primary text-white font-semibold font-mont">
+                            Read More
+                        </button>
                     </Link>
                 </div>
             </div>
