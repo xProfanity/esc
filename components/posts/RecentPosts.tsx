@@ -20,7 +20,7 @@ export default async function RecentPosts() {
                                 <PostCard post={post} />
                             </div>
                         ))}
-                    R</div>
+                    </div>
                 </div>
             </section>
         )

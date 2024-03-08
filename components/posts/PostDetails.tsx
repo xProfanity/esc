@@ -1,46 +1,28 @@
 "use client"
 
-import { Category, Post } from "@/common";
-import { base } from "@/context/store";
-import { urlFor } from "@/lib/sanity-client";
-import { fetchPostBySlug } from "@/services/sanity";
-import { motion } from "framer-motion";
-import Image from "next/image";
-import { useParams } from "next/navigation";
-import { useSnapshot } from "valtio";
+import { Category, Post } from "@/common"
+import { base } from "@/context/store"
+import { urlFor } from "@/lib/sanity-client"
+import { motion } from "framer-motion"
+import Image from "next/image"
+import { useSnapshot } from "valtio"
 
 type Props = {
-  slug: string;
-  darkmode: boolean;
+    post: Post
 }
 
-type Params = {
-  slug: string;
-}
-
-export default function PostPage() {
-    const params = useParams() as Params
+export default function PostDetails({post}: Props) {
     const {darkmode} = useSnapshot(base)
-
-  return <RenderPostPage slug={params.slug} darkmode={darkmode} />
-}
-
-async function RenderPostPage({slug, darkmode}: Props) {
-
-  try {
-    const post = await fetchPostBySlug(slug) as Post
 
     let previousWasListItem = false
     let currentList = [] as string[]
-
-    return (
-      <section className="h-auto w-full pb-40">
-        <div className="h-auto container mt-20 mx-auto">
+  return (
+    <div className="h-auto container mt-20 mx-auto">
           <div className="relative w-full h-screen max-h-[45rem]">
             <Image
               src={urlFor(post.mainImage).fit("fill").url()}
               fill
-              alt={`${slug}`}
+              alt={`${post.slug.current}`}
               className="object-cover rounded-3xl"
             />
           </div>
@@ -48,7 +30,7 @@ async function RenderPostPage({slug, darkmode}: Props) {
           <motion.div animate={{backgroundColor: !darkmode ? "#e3e3e7" : "#0c0c0c"}} className="w-[95%] md:w-4/5 min-h-screen h-auto mx-auto -mt-48 relative shadow-md rounded-3xl pb-12">
             <div className="flex flex-row gap-4 mt-5 h-auto w-full px-4">
               {post.categories.map((category: Category) => (
-                <span className="mt-10 flex flex-col justify-center items-center text-accent text-sm font-mont font-bold">{category.title}</span>
+                <span className="mt-10 flex flex-col justify-center items-center text-gray-400 text-sm font-mont font-bold">{category.title}</span>
               ))}
             </div>
 
@@ -151,14 +133,5 @@ async function RenderPostPage({slug, darkmode}: Props) {
 
           </motion.div>
         </div>
-      </section>
-    )
-  } catch (error) {
-    console.log('error', error)
-    return (
-      <section className="h-screen w-full flex flex-col justify-center items-center">
-        <motion.p animate={{color: darkmode ? "#e3e3e7" : "#011222"}} className="font-mont">Something went wrong</motion.p>
-      </section>
-    )
-  }
+  )
 }

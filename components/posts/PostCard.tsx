@@ -16,6 +16,7 @@ export default function PostCard({post}: Props) {
 
     const {darkmode} = useSnapshot(base)
 
+
   return (
     <div className="w-full flex flex-col">
         <div className="relative w-full h-[280px]">

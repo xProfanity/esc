@@ -14,9 +14,10 @@ import ThemeButton from "./home/ThemeButton";
 
 import Post from "./posts/Post";
 import PostCard from "./posts/PostCard";
+import PostDetails from "./posts/PostDetails";
 import RecentPosts from "./posts/RecentPosts";
 import Thumbnail from "./posts/Thumbnail";
 import ThumbnailContent from "./posts/ThumbnailContent";
 
-export { BackgroundRainbow, Contacts, CoreValues, Drawer, Footer, FundingAndVision, Header, Hero, Loader, Missions, Objectives, Post, PostCard, RecentPosts, ThemeButton, Thumbnail, ThumbnailContent };
+export { BackgroundRainbow, Contacts, CoreValues, Drawer, Footer, FundingAndVision, Header, Hero, Loader, Missions, Objectives, Post, PostCard, PostDetails, RecentPosts, ThemeButton, Thumbnail, ThumbnailContent };
 
