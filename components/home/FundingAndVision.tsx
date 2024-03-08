@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function FundingAndVision() {
   return (
     <section className="h-screen w-full mt-56">
-      <div className="container h-[60rem] lg:h-[35rem] mx-auto flex flex-col lg:flex-row justify-between items-center gap-2 bg-primary rounded-3xl lg:-rotate-3">
+      <div className="w-[95%] md:container h-[60rem] lg:h-[35rem] mx-auto flex flex-col lg:flex-row justify-between items-center gap-2 bg-primary rounded-3xl lg:-rotate-3">
         <div className="h-full w-full lg:rotate-3">
           <h1 className="mt-10 ml-6 text-4xl lg:text-5xl xl:text-6xl font-extrabold font-mont text-[#0c0c0c]">Vision & Funding</h1>
           <p className="mt-5 ml-6 font-semibold text-base md:text-lg lg:text-base xl:text-lg font-mont text-[#0c0c0c]">Explore Our Vision and Support Us. Learn How Your Contribution Can Make a Difference in Environmental Preservation, Social Justice, and Cultural Sustainability. Get Involved Today!</p>

@@ -88,7 +88,7 @@ const Objective = ({objective}: ObjProps) => {
     const expandPanel = () => setExpanded((current) => !current)
 
   return (
-    <div className="h-96 w-full lg:w-2/3 overflow-hidden relative">
+    <div className="h-96 w-[95%] mx-auto md:mx-0 md:w-full lg:w-2/3 overflow-hidden relative">
       <div className={`h-full w-full bg-primary rounded-3xl ${expanded ? 'overflow-y-scroll' : 'overflow-y-hidden'} overflow-x-hidden relative`}>
 
         <div className="h-auto py-1 w-11/12 mx-auto flex flex-row justify-start items-center mt-5">
@@ -96,7 +96,7 @@ const Objective = ({objective}: ObjProps) => {
         </div>
 
         <div className="mt-7 w-11/12 mx-auto">
-          <p className="text-[#011222] font-bold font-mont text-lg lg:text-lg text-left w-full">{objective.content}</p>
+          <p className="text-[#011222] font-bold font-mont text-sm md:text-lg lg:text-lg text-left w-full">{objective.content}</p>
         </div>
 
         <div className="mt-10 w-11/12 mx-auto">
@@ -109,7 +109,7 @@ const Objective = ({objective}: ObjProps) => {
       <motion.div
         initial={{x: '100%'}}
         animate={{x: expanded ? 0 : '100%'}}
-        transition={{duration: .7}}
+        transition={{duration: .5}}
         className="h-full w-full absolute bg-[#0c0c0c] flex flex-col justify-center items-center top-0 left-0 rounded-2xl">
         <ul className="w-11/12 mx-auto flex flex-col gap-2 overflow-y-scroll object-panel">
           {objective.points.map((point, i) => (
