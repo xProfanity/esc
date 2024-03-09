@@ -64,7 +64,7 @@ const HeroImage = () => {
                     className="object-cover rounded-3xl"
                     placeholder="blur"
                 />
-                <div className="absolute h-40 w-40 rounded-2xl bg-transparent backdrop-blur-lg flex flex-col justify-center items-center top-0 right-0 -translate-y-1/2 shadow-lg">
+                <div className="absolute h-40 w-40 rounded-2xl bg-transparent backdrop-blur-lg flex flex-col justify-center items-center top-0 right-0 -translate-y-1/2 shadow-md">
                     <motion.p animate={{color: snap.darkmode ? '#fff' : "#32cd32"}} className="text-lg font-bold font-mont">ESTO</motion.p>
                     <motion.p animate={{color: snap.darkmode ? '#fff' : "#32cd32"}} className="text-lg font-bold font-mont">July 2017</motion.p>
                 </div>
