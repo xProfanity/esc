@@ -19,13 +19,13 @@ export default function Header() {
   return (
     <motion.header className="fixed top-0 left-0 z-50 h-20 w-full flex flex-col justify-center items-center backdrop-blur-[3px]">
         <nav className="h-full container mx-auto flex flex-row justify-between items-center">
-            <div className="relative h-20 w-28">
+            <div className="relative h-16 w-16">
                 <Link href={"/"}>
                     <Image
                         src={logo}
                         fill
                         alt="logo"
-                        className="object-contain"
+                        className="object-cover border"
                     />
                 </Link>
             </div>
