@@ -7,6 +7,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { useSnapshot } from "valtio"
 import { BackgroundRainbow } from ".."
+import Button from "../ui/button"
 
 export default function Hero() {
 
@@ -89,9 +90,9 @@ const CTA = () => {
     return (
         <div className="flex flex-col justify-center items-start">
             <Link href={"/posts"}>
-                <motion.button animate={{color: snap.darkmode ? '#fff' : "#011222"}} type="button" className="bg-primary text-sm h-16 w-36 rounded-2xl md:rounded-3xl lg:rounded-3xl font-mont font-bold">
-                        Read Posts
-                </motion.button>
+                <Button>
+                    Read Posts
+                </Button>
             </Link>
         </div>
     )

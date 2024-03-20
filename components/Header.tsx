@@ -10,6 +10,7 @@ import { motion } from "framer-motion";
 
 import { base } from "@/context/store";
 import { ThemeButton } from ".";
+import Button from "./ui/button";
 
 export default function Header() {
     const snap = useSnapshot(base)
@@ -40,7 +41,9 @@ export default function Header() {
                 </ul>
 
                 <div className="w-2/5 flex flex-col justify-center items-center h-full">
-                    <motion.button animate={animateTextColor} className="font-semibold h-10 w-32 border-2 border-primary rounded-full">CTA</motion.button>
+                    <Button outline>
+                        Funding
+                    </Button>
                 </div>
 
                 <ThemeButton />

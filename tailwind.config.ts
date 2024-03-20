@@ -19,7 +19,21 @@ const config: Config = {
       },
       colors: {
         primary: "#32cd32",
-        accent: '#a855f7'
+        accent: '#a855f7',
+        whiteish: "#e3e3e7"
+      },
+      "animation": {
+        shimmer: "shimmer 2s linear infinite"
+      },
+      "keyframes": {
+        shimmer: {
+          from: {
+            "backgroundPosition": "0 0"
+          },
+          to: {
+            "backgroundPosition": "-200% 0"
+          }
+        }
       }
     },
   },
