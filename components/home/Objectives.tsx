@@ -113,7 +113,7 @@ const Objective = ({objective}: ObjProps) => {
         className="h-full w-full absolute bg-[#0c0c0c] flex flex-col justify-center items-center top-0 left-0 rounded-2xl">
         <ul className="w-11/12 mx-auto flex flex-col gap-2 overflow-y-scroll object-panel">
           {objective.points.map((point, i) => (
-            <li className="w-full py-2 flex flex-row justify-start items-start gap-3">
+            <li key={i} className="w-full py-2 flex flex-row justify-start items-start gap-3">
               <span className="h-12 w-12 text-sm flex flex-col justify-center items-center rounded-full bg-accent text-white">{i+1}</span>
               <p className="text-white font-bold font-mont text-xs text-left w-full">{point}</p>
             </li>
