@@ -7,7 +7,7 @@ import { PostCard } from ".."
 export default async function RecentPosts() {
 
     try {
-        const posts = await fetchRecentPosts() as Post[]
+        const posts = await fetchRecentPosts(true) as Post[]
 
         return (
             <section className="h-auto w-full relative pb-36">

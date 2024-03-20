@@ -85,13 +85,17 @@ const HeroImage = () => {
 }
 
 const CTA = () => {
-    const snap = useSnapshot(base)
 
     return (
-        <div className="flex flex-col justify-center items-start">
+        <div className="flex flex-row justify-center items-start gap-5">
             <Link href={"/posts"}>
                 <Button>
-                    Read Posts
+                    See Activities
+                </Button>
+            </Link>
+            <Link href={"/posts"}>
+                <Button secondary>
+                    Support us
                 </Button>
             </Link>
         </div>

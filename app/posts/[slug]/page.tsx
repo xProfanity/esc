@@ -1,5 +1,6 @@
+import { Post } from "@/common";
 import { PostDetails } from "@/components";
-import { fetchPostBySlug } from "@/services/sanity";
+import { fetchPostBySlug, fetchRecentPosts } from "@/services/sanity";
 
 type Params = {
   params: {
@@ -10,11 +11,12 @@ type Params = {
 export default async function PostPage({params: {slug}}: Params) {
 
   try {
-    const post = await fetchPostBySlug(slug)
+    const post = await fetchPostBySlug(slug) as Post
+    const recentPosts = await fetchRecentPosts(true, post._id) as Post[]
 
     return (
       <section className="h-auto w-full pb-40">
-        <PostDetails post={post} />
+        <PostDetails post={post} recentPosts={recentPosts} />
       </section>
     )
   } catch (error) {

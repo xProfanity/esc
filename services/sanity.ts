@@ -8,8 +8,8 @@ export async function fetchFeaturedPost() {
     return response[0]
 }
 
-export async function fetchRecentPosts() {
-    const query = `*[_type == "post" && featured == false] | order(publishedAt desc) {
+export async function fetchRecentPosts(excludeFeatured: boolean, excludedId?: string) {
+    const query = `*[_type == "post"${!excludeFeatured ? " && featured == true " : ' '}&& _id != "${excludedId}"] | order(publishedAt desc) {
         ...,
         author -> {
             name,
