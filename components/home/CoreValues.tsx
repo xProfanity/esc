@@ -28,7 +28,7 @@ export default function CoreValues() {
             </div>
 
             <div className="w-full flex flex-row flex-wrap gap-y-10 justify-around items-center mt-20">
-                <div className="h-44 w-44 flex flex-col justify-center items-center bg-primary rounded-3xl">
+                <div className="h-44 w-44 flex flex-col justify-center items-center backdrop-blur-sm bg-primary/60 rounded-3xl">
                     <div className="relative h-24 w-24">
                         <Image
                             src={quality}
@@ -39,7 +39,7 @@ export default function CoreValues() {
                     </div>
                     <p className="font-bold font-mont text-white text-lg">Quality</p>
                 </div>
-                <div className="h-44 w-44 flex flex-col justify-center items-center bg-primary rounded-3xl">
+                <div className="h-44 w-44 flex flex-col justify-center items-center backdrop-blur-sm bg-primary/60 rounded-3xl">
                     <div className="relative h-24 w-24">
                         <Image
                             src={integrity}
@@ -50,7 +50,7 @@ export default function CoreValues() {
                     </div>
                     <p className="font-bold font-mont text-white text-lg">Integrity</p>
                 </div>
-                <div className="h-44 w-44 flex flex-col justify-center items-center bg-primary rounded-3xl">
+                <div className="h-44 w-44 flex flex-col justify-center items-center backdrop-blur-sm bg-primary/60 rounded-3xl">
                     <div className="relative h-24 w-24">
                         <Image
                             src={transparency}
@@ -61,7 +61,7 @@ export default function CoreValues() {
                     </div>
                     <p className="font-bold font-mont text-white text-lg">Transparency</p>
                 </div>
-                <div className="h-44 w-44 flex flex-col justify-center items-center bg-primary rounded-3xl">
+                <div className="h-44 w-44 flex flex-col justify-center items-center backdrop-blur-sm bg-primary/60 rounded-3xl">
                     <div className="relative h-24 w-24">
                         <Image
                             src={professionalism}

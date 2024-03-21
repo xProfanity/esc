@@ -21,7 +21,7 @@ export default function Missions() {
         <div className="container h-full mx-auto flex flex-col justify-center items-center">
             <div className="flex flex-col lg:flex-row justify-start items-start gap-10 md:gap-4 w-fit">
                 <div className="h-full w-full">
-                    <div className={`h-[450px] lg:h-[450px] xl:h-[450px] w-[95%] sm:w-[450px] md:w-[600px] lg:w-[600px] xl:w-[600px] bg-transparent backdrop-blur-3xl rounded-3xl relative overflow-hidden shadow-xl mx-auto`}>
+                    <div className={`h-[450px] lg:h-[450px] xl:h-[450px] w-[95%] sm:w-[450px] md:w-[600px] lg:w-[600px] xl:w-[600px] backdrop-blur-3xl bg-primary/40 rounded-3xl relative overflow-hidden shadow-xl mx-auto`}>
                         <div className="h-32 ml-5 flex flex-col justify-center items-start mt-10">
                             <motion.p animate={{color: snap.darkmode ? '#e3e3e7' : '#011222'}} className="text-5xl xl:text-6xl font-extrabold font-mont">Our Mission</motion.p>
                         </div>

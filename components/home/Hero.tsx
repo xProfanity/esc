@@ -93,7 +93,7 @@ const CTA = () => {
                     See Activities
                 </Button>
             </Link>
-            <Link href={"/posts"}>
+            <Link href={"/funding"}>
                 <Button secondary>
                     Support us
                 </Button>
