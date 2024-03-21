@@ -1,5 +1,9 @@
 import { Drawer, Footer, Header } from "@/components";
 import BodyWrapper from "@/components/home/BodyWrapper";
+import { FloatingNav } from "@/components/ui/header";
+import { Navlinks } from "@/constants";
+import { Theme } from "@radix-ui/themes";
+import '@radix-ui/themes/styles.css';
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -22,12 +26,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Header />
-        <Drawer />
-        <BodyWrapper>
-          {children}
-        </BodyWrapper>
-        <Footer />
+        <Theme>
+        <FloatingNav navItems={Navlinks} />
+          <Header />
+          <Drawer />
+          <BodyWrapper>
+            {children}
+          </BodyWrapper>
+          <Footer />
+        </Theme>
       </body>
     </html>
   );
