@@ -89,7 +89,7 @@ const Objective = ({objective}: ObjProps) => {
 
   return (
     <div className="h-96 w-[95%] mx-auto md:mx-0 md:w-full lg:w-2/3 overflow-hidden relative">
-      <div className={`h-full w-full backdrop-blur-lg bg-primary/70 rounded-3xl ${expanded ? 'overflow-y-scroll' : 'overflow-y-hidden'} overflow-x-hidden relative`}>
+      <div className={`h-full w-full backdrop-blur-lg bg-primary/70 shadow-lg rounded-3xl ${expanded ? 'overflow-y-scroll' : 'overflow-y-hidden'} overflow-x-hidden relative`}>
 
         <div className="h-auto py-1 w-11/12 mx-auto flex flex-row justify-start items-center mt-5">
           <p className="text-3xl lg:text-5xl text-[#011222] font-mont font-bold ">{objective.objective}</p>

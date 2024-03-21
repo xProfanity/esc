@@ -19,7 +19,7 @@ export default function PostDetails({post, recentPosts}: Props) {
     let previousWasListItem = false
     let currentList = [] as string[]
   return (
-    <div className="h-auto container mt-20 mx-auto">
+    <div className="h-auto container mt-24 mx-auto">
           <div className="relative w-full h-screen max-h-[45rem]">
             <Image
               src={urlFor(post.mainImage).fit("fill").url()}
@@ -135,6 +135,7 @@ export default function PostDetails({post, recentPosts}: Props) {
               </div>
 
               <div className="w-1/3 h-full mt-10 flex flex-col gap-10">
+                <motion.p animate={{color: darkmode ? "#e3e3e7" : "#011222"}} className="font-bold font-mont text-pretty text-3xl md:text-4xl">More Posts</motion.p>
                 {recentPosts.map((post) => (
                   <div key={post._id}>
                     <PostCard post={post} />
