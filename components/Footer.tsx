@@ -18,7 +18,7 @@ export default function Footer() {
 
         <ul className="mt-20 w-full flex flex-row justify-center items-center gap-10">
             {Navlinks.map((item, i) => (
-                <li key={i} className=" capitalize font-bold font-mont">
+                <li key={i} className="text-white capitalize font-bold font-mont">
                     <Link href={item.link}>{item.name}</Link>
                 </li>
             ))}
@@ -29,7 +29,7 @@ export default function Footer() {
         </div>
 
         <div className="w-full h-10 mt-10 flex flex-col justify-center items-center">
-            <p className=" text-sm font-mont">&copy; copyright 2024</p>
+            <p className="text-sm font-mont text-white">&copy; copyright 2024</p>
         </div>
     </footer>
   )

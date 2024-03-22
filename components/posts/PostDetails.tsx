@@ -6,6 +6,7 @@ import { urlFor } from "@/lib/sanity-client"
 import Image from "next/image"
 import { useSnapshot } from "valtio"
 import { PostCard } from ".."
+import { AspectRatio } from "../ui/aspect-ratio"
 
 type Props = {
     post: Post;
@@ -19,16 +20,16 @@ export default function PostDetails({post, recentPosts}: Props) {
     let currentList = [] as string[]
   return (
     <div className="h-auto container mt-24 mx-auto">
-          <div className="relative w-full h-screen max-h-[45rem]">
-            <Image
-              src={urlFor(post.mainImage).fit("fill").url()}
-              fill
-              alt={`${post.slug.current}`}
-              className="object-cover rounded-3xl"
-            />
-          </div>
+      <AspectRatio ratio={13/5}>
+          <Image
+            src={urlFor(post.mainImage).fit("fill").url()}
+            fill
+            alt={`${post.slug.current}`}
+            className="object-cover rounded-3xl"
+          />
+      </AspectRatio>
 
-          <div className="w-[95%] md:w-11/12 min-h-screen h-auto mx-auto -mt-48 relative shadow-md rounded-3xl pb-12 pr-2">
+          <div className="w-full min-h-screen h-auto mx-auto mt-10 relative pb-12 pr-2">
             <div className="flex flex-row gap-4 mt-5 h-auto w-full px-4">
               {post.categories.map((category: Category) => (
                 <span className="mt-10 flex flex-col justify-center items-center text-gray-400 text-sm font-mont font-bold">{category.title}</span>
@@ -43,7 +44,7 @@ export default function PostDetails({post, recentPosts}: Props) {
               <p className="text-sm font-mont font-semibold">{new Date(post.publishedAt).toDateString()}</p>
             </div>
 
-            <div className="w-full h-auto flex flex-row">
+            <div className="w-full h-auto flex flex-col lg:flex-row">
               <div className="flex flex-col gap-5 w-full lg:w-2/3 px-2 lg:px-4 mt-10">
                 {post.body.map((item, i) => {
                   switch (item.style) {
@@ -133,13 +134,15 @@ export default function PostDetails({post, recentPosts}: Props) {
                 })}
               </div>
 
-              <div className="w-1/3 h-full mt-10 flex flex-col gap-10">
+              <div className="w-full lg:w-1/3 h-full mt-10 flex flex-col gap-10">
                 <p className="font-bold font-mont text-pretty text-3xl md:text-4xl">More Posts</p>
-                {recentPosts.map((post) => (
-                  <div key={post._id}>
-                    <PostCard post={post} />
-                  </div>
-                ))}
+                <div className="w-full flex flex-row flex-wrap lg:flex-col gap-10">
+                  {recentPosts.map((post) => (
+                    <div key={post._id}>
+                      <PostCard post={post} />
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 

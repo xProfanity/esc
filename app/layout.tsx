@@ -1,6 +1,8 @@
 import { Drawer, Footer, Header } from "@/components";
 import BodyWrapper from "@/components/home/BodyWrapper";
 import { ThemeProvider } from "@/components/theme-provider";
+import { FloatingNav } from "@/components/ui/header";
+import { Navlinks } from "@/constants";
 import { Theme } from "@radix-ui/themes";
 import '@radix-ui/themes/styles.css';
 import type { Metadata } from "next";
@@ -32,7 +34,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Theme>
-          {/* <FloatingNav navItems={Navlinks} /> */}
+          <FloatingNav navItems={Navlinks} />
             <Header />
             <Drawer />
             <BodyWrapper>

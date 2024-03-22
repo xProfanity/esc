@@ -73,7 +73,7 @@ export const FloatingNav = ({
               "relative items-center flex space-x-1"
             )}
           >
-            <motion.span animate={{color: darkmode ? '#e3e3e7' : '#011222'}} className="hidden sm:block text-sm hover:text-accent font-semibold font-mont capitalize">{navItem.name}</motion.span>
+            <span className="hidden sm:block text-sm hover:text-accent font-semibold font-mont capitalize">{navItem.name}</span>
           </Link>
         ))}
         <Button>
