@@ -46,8 +46,8 @@ const Niche = () => {
     
     return (
         <div className="flex flex-col justify-center items-center">
-            <motion.p animate={{color: snap.darkmode ? '#e3e3e7' : '#011222'}} className="text-3xl sm:text-5xl font-extrabold font-mont uppercase text-center sm:text-left">Empowering Communities for a Sustainable Future</motion.p>
-            <motion.p animate={{color: snap.darkmode ? '#ccc' : '#011222'}} className="text-lg font-bold font-mont capitalize text-center sm:text-left w-full mt-10">Strengthening communities to face challenges head-on and thrive.</motion.p>
+            <p className="text-3xl sm:text-5xl font-extrabold font-mont uppercase text-center sm:text-left">Empowering Communities for a Sustainable Future</p>
+            <p className="text-lg font-bold font-mont capitalize text-center sm:text-left w-full mt-10">Strengthening communities to face challenges head-on and thrive.</p>
         </div>
     )
 }
@@ -66,8 +66,8 @@ const HeroImage = () => {
                     placeholder="blur"
                 />
                 <div className="absolute h-40 w-40 rounded-2xl bg-transparent backdrop-blur-lg flex flex-col justify-center items-center top-0 right-0 -translate-y-1/2 shadow-md">
-                    <motion.p animate={{color: snap.darkmode ? '#fff' : "#32cd32"}} className="text-lg font-bold font-mont">ESTO</motion.p>
-                    <motion.p animate={{color: snap.darkmode ? '#fff' : "#32cd32"}} className="text-lg font-bold font-mont">July 2017</motion.p>
+                    <p className="text-lg font-bold font-mont">ESTO</p>
+                    <p className="text-lg font-bold font-mont">July 2017</p>
                 </div>
                     <div className="absolute sm:h-[250px] md:h-[300px] lg:h-[250px] xl:h-[300px] sm:w-[300px] md:w-[350px] lg:w-[300px] xl:w-[350px] rounded-3xl bottom-0 sm:left-0 lg:right-0 xl:left-0 sm:-translate-x-1/2 lg:-translate-x-1/3 xl:-translate-x-1/3 md:-translate-y-1/4 lg:translate-y-1/3 overflow-hidden hidden sm:block shadow-md shadow-black">
                         <Image

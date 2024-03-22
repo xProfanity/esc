@@ -55,12 +55,12 @@ export default function Objectives() {
         <div id="section" className="flex flex-col md:flex-row justify-start md:justify-between items-start">
           <div className="w-full md:w-2/5 h-96 md:h-full relative ">
             <div id="textContainer">
-              <motion.h1 animate={{color: snap.darkmode ? "#fff" : "#011222"}} className="text-4xl sm:text-6xl md:text-4xl lg:text-5xl font-extrabold font-mont
-              text-white text-center md:text-left animate-text-down">
+              <h1 className="text-4xl sm:text-6xl md:text-4xl lg:text-5xl font-extrabold font-mont
+               text-center md:text-left animate-text-down">
                 The Environment, Society & Culture
-              </motion.h1>
+              </h1>
 
-              <motion.p animate={{color: snap.darkmode ? "#fff" : "#011222"}} className="text-sm sm:text-lg md:text-xl text-center md:text-left font-medium font-mont mt-10 w-full lg:w-2/3 animate-text-down">Our organization aims to promote environmental sustainability, advocate for social justice and economic integrity, and foster health and cultural preservation. Together, we strive for a more sustainable, equitable, and healthy future</motion.p>
+              <p className="text-sm sm:text-lg md:text-xl text-center md:text-left font-medium font-mont mt-10 w-full lg:w-2/3 animate-text-down">Our organization aims to promote environmental sustainability, advocate for social justice and economic integrity, and foster health and cultural preservation. Together, we strive for a more sustainable, equitable, and healthy future</p>
             </div>
           </div>
           <div className="w-full md:w-3/5 h-full flex flex-col gap-10 lg:gap-20">
@@ -92,17 +92,19 @@ const Objective = ({objective}: ObjProps) => {
       <div className={`h-full w-full backdrop-blur-lg bg-primary/70 shadow-lg rounded-3xl ${expanded ? 'overflow-y-scroll' : 'overflow-y-hidden'} overflow-x-hidden relative`}>
 
         <div className="h-auto py-1 w-11/12 mx-auto flex flex-row justify-start items-center mt-5">
-          <p className="text-3xl lg:text-5xl text-[#011222] font-mont font-bold ">{objective.objective}</p>
+          <p className="text-3xl lg:text-5xl  font-mont font-bold ">{objective.objective}</p>
         </div>
 
         <div className="mt-7 w-11/12 mx-auto">
-          <p className="text-[#011222] font-bold font-mont text-sm md:text-lg lg:text-lg text-left w-full">{objective.content}</p>
+          <p className=" font-bold font-mont text-sm md:text-lg lg:text-lg text-left w-full">{objective.content}</p>
         </div>
 
         <div className="mt-10 w-11/12 mx-auto">
           <button type="button" className="flex flex-row justify-start items-center gap-2" onClick={expandPanel}>
             <p className="text-white text-xl">Read more</p>
-            <span className="text-white text-xl">{"==>"}</span>
+            <span className="text-white text-xl">
+              <svg className="h-6 w-6" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg>  
+            </span>
           </button>
         </div>
       </div>

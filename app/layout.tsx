@@ -1,7 +1,6 @@
 import { Drawer, Footer, Header } from "@/components";
 import BodyWrapper from "@/components/home/BodyWrapper";
-import { FloatingNav } from "@/components/ui/header";
-import { Navlinks } from "@/constants";
+import { ThemeProvider } from "@/components/theme-provider";
 import { Theme } from "@radix-ui/themes";
 import '@radix-ui/themes/styles.css';
 import type { Metadata } from "next";
@@ -26,15 +25,22 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Theme>
-        <FloatingNav navItems={Navlinks} />
-          <Header />
-          <Drawer />
-          <BodyWrapper>
-            {children}
-          </BodyWrapper>
-          <Footer />
-        </Theme>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Theme>
+          {/* <FloatingNav navItems={Navlinks} /> */}
+            <Header />
+            <Drawer />
+            <BodyWrapper>
+              {children}
+            </BodyWrapper>
+            <Footer />
+          </Theme>
+        </ThemeProvider>
       </body>
     </html>
   );

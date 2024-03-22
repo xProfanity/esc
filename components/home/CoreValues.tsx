@@ -1,6 +1,5 @@
 "use client"
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 import { useSnapshot } from "valtio";
 
@@ -24,7 +23,7 @@ export default function CoreValues() {
             </div>
 
             <div className="mt-5">
-                <motion.p animate={{color: snap.darkmode ? '#e3e3e7' : '#011222'}} className="text-4xl md:text-5xl lg:text-6xl font-bold font-mont">Our Core Values.</motion.p>
+                <p className="text-4xl md:text-5xl lg:text-6xl font-bold font-mont">Our Core Values.</p>
             </div>
 
             <div className="w-full flex flex-row flex-wrap gap-y-10 justify-around items-center mt-20">
