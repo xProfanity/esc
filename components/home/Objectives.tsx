@@ -49,7 +49,6 @@ export default function Objectives() {
       <div className="h-full mx-auto container flex flex-col justify-start items-start pb-20">
    
         <div className="h-32 w-full flex flex-col justify-start items-center mt-36">
-          <h1 className="p-3 border-2 border-accent text-accent font-mont font-bold rounded-full">objectives</h1>
         </div>
 
         <div id="section" className="flex flex-col md:flex-row justify-start md:justify-between items-start">
@@ -96,7 +95,7 @@ const Objective = ({objective}: ObjProps) => {
         </div>
 
         <div className="mt-7 w-11/12 mx-auto">
-          <p className=" font-bold font-mont text-sm md:text-lg lg:text-lg text-left w-full">{objective.content}</p>
+          <p className="text-sm sm:text-lg text-left font-medium font-mont w-full">{objective.content}</p>
         </div>
 
         <div className="mt-10 w-11/12 mx-auto">

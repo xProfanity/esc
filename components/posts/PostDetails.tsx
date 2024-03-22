@@ -138,7 +138,7 @@ export default function PostDetails({post, recentPosts}: Props) {
                 <p className="font-bold font-mont text-pretty text-3xl md:text-4xl">More Posts</p>
                 <div className="w-full flex flex-row flex-wrap lg:flex-col gap-10">
                   {recentPosts.map((post) => (
-                    <div key={post._id}>
+                    <div key={post._id} className="mx-auto">
                       <PostCard post={post} />
                     </div>
                   ))}

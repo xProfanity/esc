@@ -23,7 +23,7 @@ export default function Contacts() {
         <div className="h-[50rem] lg:h-[35rem] container mx-auto flex flex-col lg:flex-row items-center justify-center">
             <div className="h-full w-full flex flex-col justify-center md:justify-start items-center md:items-start">
                 <h1 className="text-5xl sm:text-6xl font-extrabold text-primary font-mont">Contact Us</h1>
-                <p className="mt-5 font-semibold text-base sm:text-lg font-mont w-2/3 text-center md:text-left">Have questions or want to get involved? Reach out to us! We're here to listen, assist, and collaborate.</p>
+                <p className="mt-5 text-sm sm:text-lg md:text-xl text-center md:text-left font-medium font-mont w-2/3">Have questions or want to get involved? Reach out to us! We're here to listen, assist, and collaborate.</p>
 
                 <div className="flex flex-col md:flex-row justify-center items-center gap-2 mt-10">
                        <svg className="h-6 w-6 text-red-500"

@@ -36,7 +36,7 @@ export default function CoreValues() {
                             className="object-contain grayscale"
                         />
                     </div>
-                    <p className="font-bold font-mont text-white text-lg">Quality</p>
+                    <p className="text-xl text-center font-medium font-mont">Quality</p>
                 </div>
                 <div className="h-44 w-44 flex flex-col justify-center items-center backdrop-blur-sm bg-primary/60 rounded-3xl">
                     <div className="relative h-24 w-24">
@@ -47,7 +47,7 @@ export default function CoreValues() {
                             className="object-contain grayscale"
                         />
                     </div>
-                    <p className="font-bold font-mont text-white text-lg">Integrity</p>
+                    <p className="text-xl text-center font-medium font-mont">Integrity</p>
                 </div>
                 <div className="h-44 w-44 flex flex-col justify-center items-center backdrop-blur-sm bg-primary/60 rounded-3xl">
                     <div className="relative h-24 w-24">
@@ -58,7 +58,7 @@ export default function CoreValues() {
                             className="object-contain grayscale"
                         />
                     </div>
-                    <p className="font-bold font-mont text-white text-lg">Transparency</p>
+                    <p className="text-xl text-center font-medium font-mont">Transparency</p>
                 </div>
                 <div className="h-44 w-44 flex flex-col justify-center items-center backdrop-blur-sm bg-primary/60 rounded-3xl">
                     <div className="relative h-24 w-24">
@@ -69,7 +69,7 @@ export default function CoreValues() {
                             className="object-contain grayscale"
                         />
                     </div>
-                    <p className="font-bold font-mont text-white text-lg">Professionalism</p>
+                    <p className="text-xl text-center font-medium font-mont">Professionalism</p>
                 </div>
             </div>
         </div>
