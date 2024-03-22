@@ -69,3 +69,5 @@ export const Navlinks = [
     link: '/contact'
   },
 ]
+
+export const fundingText = `Join us in our mission to safeguard the environment, champion social justice, and combat pandemics. Your support fuels positive change. Together, we can create a brighter future for all.`
