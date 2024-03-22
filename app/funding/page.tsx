@@ -1,12 +1,11 @@
-import { BackgroundRainbow } from "@/components";
-import { Input } from "@/components/ui/input";
+import { BackgroundRainbow, FundingForm } from "@/components";
 import { TextGenerateEffect } from "@/components/ui/text-generator-effect";
 import { fundingText } from "@/constants";
-import { Button, Heading } from "@radix-ui/themes";
+import { Heading } from "@radix-ui/themes";
 
 export default function Funding() {
   return (
-    <div className="h-screen w-full flex flex-col md:flex-row justify-center items-center">
+    <div className="h-screen max-h-[924px] container mx-auto flex flex-col md:flex-row justify-center items-center">
       <BackgroundRainbow />
 
       <div className="w-full h-full flex flex-col justify-center items-center relative z-10">
@@ -18,9 +17,7 @@ export default function Funding() {
       </div>
       <div className="w-full h-full flex flex-col justify-center items-center relative">
         <div className="h-auto w-96 border border-accent rounded-lg flex flex-col justify-center items-start backdrop-blur-sm">
-          <Heading className="font-mont text-whiteish">Fund us mulla lol</Heading>
-          <Input />
-          <Button>Hello 👋</Button>
+          <FundingForm />
         </div>
       </div>
     </div>

@@ -19,5 +19,7 @@ import RecentPosts from "./posts/RecentPosts";
 import Thumbnail from "./posts/Thumbnail";
 import ThumbnailContent from "./posts/ThumbnailContent";
 
-export { BackgroundRainbow, Contacts, CoreValues, Drawer, Footer, FundingAndVision, Header, Hero, Loader, Missions, Objectives, Post, PostCard, PostDetails, RecentPosts, ThemeButton, Thumbnail, ThumbnailContent };
+import FundingForm from "./funding/funding-form";
+
+export { BackgroundRainbow, Contacts, CoreValues, Drawer, Footer, FundingAndVision, FundingForm, Header, Hero, Loader, Missions, Objectives, Post, PostCard, PostDetails, RecentPosts, ThemeButton, Thumbnail, ThumbnailContent };
 
