@@ -5,14 +5,13 @@ import { Heading } from "@radix-ui/themes";
 
 export default function Funding() {
   return (
-    <div className="h-screen max-h-[924px] container mx-auto flex flex-col md:flex-row justify-center items-center">
+    <div className="h-screen max-h-[924px] container mx-auto flex flex-col md:flex-row justify-center items-center pb-20 md:pb-0 mt-36 md:mt-0">
       <BackgroundRainbow />
 
       <div className="w-full h-full flex flex-col justify-center items-center relative z-10">
-
         <div className="w-full h-full relative flex flex-col items-center justify-center">
-          <Heading size={"8"}>Empower Change, Transform Lives</Heading>
-          <TextGenerateEffect words={fundingText} className="font-semibold text-xl font-mont w-2/3 text-center" />
+          <Heading size={"8"} className="text-center">Empower Change, Transform Lives</Heading>
+          <TextGenerateEffect words={fundingText} className="font-semibold text-lg md:text-xl font-mont w-2/3 text-center" />
         </div>
       </div>
       <div className="w-full h-full flex flex-col justify-center items-center relative">
