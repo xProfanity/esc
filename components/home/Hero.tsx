@@ -87,7 +87,7 @@ const HeroImage = () => {
 const CTA = () => {
 
     return (
-        <div className="flex flex-row justify-center items-start gap-5">
+        <div className="flex flex-col md:flex-col justify-center items-center md:items-start gap-5">
             <Link href={"/posts"}>
                 <Button>
                     See Activities

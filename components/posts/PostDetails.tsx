@@ -19,8 +19,8 @@ export default function PostDetails({post, recentPosts}: Props) {
     let previousWasListItem = false
     let currentList = [] as string[]
   return (
-    <div className="h-auto container mt-24 mx-auto">
-      <AspectRatio ratio={13/5}>
+    <div className="h-auto container mt-24 mx-auto flex flex-col">
+      <AspectRatio ratio={13/5} className="min-h-[500px]">
           <Image
             src={urlFor(post.mainImage).fit("fill").url()}
             fill
