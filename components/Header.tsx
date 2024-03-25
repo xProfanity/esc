@@ -54,7 +54,7 @@ export default function Header() {
                     </svg>
                 </button>
 
-                <ThemeButton className="backdrop-blur-md" />
+                <ThemeButton />
             </div>
         </nav>
     </motion.header>
