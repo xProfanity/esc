@@ -2,15 +2,18 @@
 import { pawapay, stripe } from "@/assets";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 
 export default function FundingForm() {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
 
-  };
+  const [firstname, setFirstname] = useState("")
+  const [lastname, setLastname] = useState("")
+
+  const handlePawapayRequest = () => {}
+  const handleStripeRequest = () => {}
+  
   return (
     <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-black">
       <h2 className="font-bold text-xl text-neutral-200 font-mont">
@@ -20,15 +23,15 @@ export default function FundingForm() {
         Fill in the form to proceed to funding
       </p>
 
-      <form className="my-8" onSubmit={handleSubmit}>
+      <div className="my-8">
         <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
           <LabelInputContainer>
             <Label htmlFor="firstname">First name</Label>
-            <Input id="firstname" placeholder="Tyler" type="text" />
+            <Input id="firstname" placeholder="Tyler" type="text" value={firstname} onChange={({target}) => setFirstname(target.value)} />
           </LabelInputContainer>
           <LabelInputContainer>
             <Label htmlFor="lastname">Last name</Label>
-            <Input id="lastname" placeholder="Durden" type="text" />
+            <Input id="lastname" placeholder="Durden" type="text" value={lastname} onChange={({target}) => setLastname(target.value)} />
           </LabelInputContainer>
         </div>
 
@@ -41,6 +44,7 @@ export default function FundingForm() {
           <button
             className=" relative group/btn flex space-x-2 items-center justify-center px-4 w-full text-black rounded-md h-10 font-medium shadow-input bg-gray-50 dark:shadow-[0px_0px_1px_1px_var(--neutral-800)]"
             type="submit"
+            onClick={handlePawapayRequest}
           >
             <Image
                 src={pawapay}
@@ -56,6 +60,7 @@ export default function FundingForm() {
           <button
             className="relative group/btn flex space-x-2 items-center justify-center px-4 w-full text-black rounded-md h-10 font-medium shadow-input bg-gray-50 dark:shadow-[0px_0px_1px_1px_var(--neutral-800)]"
             type="submit"
+            onClick={handleStripeRequest}
           >
             <Image
                 src={stripe}
@@ -68,7 +73,7 @@ export default function FundingForm() {
             <BottomGradient />
           </button>
         </div>
-      </form>
+      </div>
     </div>
   );
 }
