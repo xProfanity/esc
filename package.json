@@ -30,7 +30,9 @@
     "react-dom": "^18",
     "sanity": "^3.31.0",
     "tailwind-merge": "^2.2.2",
-    "valtio": "^1.13.1"
+    "uuid": "^9.0.1",
+    "valtio": "^1.13.1",
+    "vaul": "^0.9.0"
   },
   "devDependencies": {
     "@types/node": "^20",

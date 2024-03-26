@@ -2,6 +2,7 @@
 import { pawapay, stripe } from "@/assets";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useState } from "react";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
@@ -10,6 +11,8 @@ export default function FundingForm() {
 
   const [firstname, setFirstname] = useState("")
   const [lastname, setLastname] = useState("")
+
+  const user = firstname === "" && lastname === "" ? 'anon' : `${firstname} ${lastname}`
 
   const handlePawapayRequest = () => {}
   const handleStripeRequest = () => {}
@@ -20,7 +23,7 @@ export default function FundingForm() {
         Funding Form
       </h2>
       <p className="text-sm max-w-sm mt-2 text-neutral-300 font-mont">
-        Fill in the form to proceed to funding
+        Fill in the form to proceed to funding. Leave blank if you want to be anonymous
       </p>
 
       <div className="my-8">
@@ -41,21 +44,22 @@ export default function FundingForm() {
             <p className="text-sm max-w-sm text-neutral-300 font-mont">
                 choose a payment gateway
             </p>
-          <button
-            className=" relative group/btn flex space-x-2 items-center justify-center px-4 w-full text-black rounded-md h-10 font-medium shadow-input bg-gray-50 dark:shadow-[0px_0px_1px_1px_var(--neutral-800)]"
-            type="submit"
-            onClick={handlePawapayRequest}
-          >
-            <Image
-                src={pawapay}
-                height={50}
-                width={100}
-                alt="pawapay"
-                className="object-cover"
-            />
+          <Link href={`/funding/pawapay?user=${user.toLowerCase().replaceAll(' ', '_')}`}>
+            <button
+              className=" relative group/btn flex space-x-2 items-center justify-center px-4 w-full text-black rounded-md h-10 font-medium shadow-input bg-gray-50 dark:shadow-[0px_0px_1px_1px_var(--neutral-800)]"
+              type="submit"
+            >
+              <Image
+                  src={pawapay}
+                  height={50}
+                  width={100}
+                  alt="pawapay"
+                  className="object-cover"
+              />
 
-            <BottomGradient />
-          </button>
+              <BottomGradient />
+            </button>
+          </Link>
     
           <button
             className="relative group/btn flex space-x-2 items-center justify-center px-4 w-full text-black rounded-md h-10 font-medium shadow-input bg-gray-50 dark:shadow-[0px_0px_1px_1px_var(--neutral-800)]"
