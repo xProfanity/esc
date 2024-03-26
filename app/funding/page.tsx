@@ -5,7 +5,7 @@ import { Heading } from "@radix-ui/themes";
 
 export default function Funding() {
   return (
-    <div className="h-screen max-h-[924px] container mx-auto flex flex-col gap-16 md:gap-0 md:flex-row justify-center items-center pb-20 md:pb-0 mt-36 md:mt-20">
+    <div className="h-screen max-h-[924px] container mx-auto flex flex-col gap-16 md:gap-0 md:flex-row justify-center items-center pb-20 md:pb-0 mt-36 md:mt-0">
       <BackgroundRainbow />
 
       <div className="w-full h-full flex flex-col justify-center items-center relative z-10">
