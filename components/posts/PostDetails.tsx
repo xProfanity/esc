@@ -1,10 +1,10 @@
 "use client"
 
+
 import { Category, Post } from "@/common"
-import { base } from "@/context/store"
 import { urlFor } from "@/lib/sanity-client"
 import Image from "next/image"
-import { useSnapshot } from "valtio"
+import { useEffect, useState } from "react"
 import { PostCard } from ".."
 import { AspectRatio } from "../ui/aspect-ratio"
 
@@ -14,19 +14,56 @@ type Props = {
 }
 
 export default function PostDetails({post, recentPosts}: Props) {
-    const {darkmode} = useSnapshot(base)
+
+    const [playbackId, setPlaybackId] = useState<string | undefined>()
+
+    const [isLoading, setIsLoading] = useState(false)
 
     let previousWasListItem = false
     let currentList = [] as string[]
+
+    useEffect(() => {
+      const getVideoPlayback = async () => {
+        const fileRef = {file: post.video?.asset._ref}
+
+        try {
+          setIsLoading(true)
+          const response = await fetch('/api/mux', {method: "POST", body: JSON.stringify(fileRef)})
+
+          const asset = await response.json() as {url: string}
+
+          setPlaybackId(asset.url)
+        } catch (error) {
+          console.log('error', error)
+          setIsLoading(false)
+        } finally {
+          setIsLoading(false)
+        }
+      }
+
+      getVideoPlayback()
+    }, [])
   return (
     <div className="h-auto container mt-24 mx-auto flex flex-col">
-      <AspectRatio ratio={13/5} className="min-h-[500px]">
-          <Image
-            src={urlFor(post.mainImage).fit("fill").url()}
-            fill
-            alt={`${post.slug.current}`}
-            className="object-cover rounded-3xl"
-          />
+      <AspectRatio ratio={13/5} className="min-h-[500px] relative">
+        {post.video ? (
+            <>
+              {isLoading ? (
+                <p>Video Loading</p>
+              ) : (
+                <video>
+                  <source src={playbackId} />
+                </video>
+              )}
+            </>
+          ) : (
+            <Image
+              src={urlFor(post.mainImage).fit("fill").url()}
+              fill
+              alt={`${post.slug.current}`}
+              className="object-cover rounded-3xl"
+            />
+        )}
       </AspectRatio>
 
           <div className="w-full min-h-screen h-auto mx-auto mt-10 relative pb-12 pr-2">
@@ -145,7 +182,6 @@ export default function PostDetails({post, recentPosts}: Props) {
                 </div>
               </div>
             </div>
-
           </div>
         </div>
   )
