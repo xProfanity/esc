@@ -24,7 +24,7 @@ export default function FundingForm() {
             <p className="text-sm max-w-sm text-neutral-300 font-mont">
                 choose a payment gateway
             </p>
-          <Link href={`/funding/pawapay?user=${user.toLowerCase().replaceAll(' ', '_')}`}>
+          <Link href={`/funding/pawapay`}>
             <button
               className=" relative group/btn flex space-x-2 items-center justify-center px-4 w-full text-black rounded-md h-10 font-medium shadow-input bg-gray-50 dark:shadow-[0px_0px_1px_1px_var(--neutral-800)]"
               type="submit"
