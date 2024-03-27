@@ -1,11 +1,12 @@
 "use client"
 
+import MuxVideoPlayer from "@mux/mux-player-react"
 
 import { Category, Post } from "@/common"
 import { urlFor } from "@/lib/sanity-client"
 import Image from "next/image"
 import { useEffect, useState } from "react"
-import { PostCard } from ".."
+import { Loader, PostCard } from ".."
 import { AspectRatio } from "../ui/aspect-ratio"
 
 type Props = {
@@ -45,15 +46,15 @@ export default function PostDetails({post, recentPosts}: Props) {
     }, [])
   return (
     <div className="h-auto container mt-24 mx-auto flex flex-col">
-      <AspectRatio ratio={13/5} className="min-h-[500px] relative">
+      <AspectRatio ratio={13/5} className={`min-h-[500px] relative ${post.video && 'w-fit mx-auto rounded-3xl overflow-hidden'}`}>
         {post.video ? (
             <>
               {isLoading ? (
-                <p>Video Loading</p>
+                <div className="h-full w-full flex flex-col justify-center items-center">
+                  <Loader />
+                </div>
               ) : (
-                <video>
-                  <source src={playbackId} />
-                </video>
+                <MuxVideoPlayer src={playbackId} accentColor="#32cd32" className="rounded-3xl h-full w-full relative" title={post.title} />
               )}
             </>
           ) : (
@@ -66,7 +67,7 @@ export default function PostDetails({post, recentPosts}: Props) {
         )}
       </AspectRatio>
 
-          <div className="w-full min-h-screen h-auto mx-auto mt-10 relative pb-12 pr-2">
+          <div className="w-full min-h-screen h-auto mx-auto mt-64 sm:mt-56 md:mt-44 lg:mt-24 xl:mt-10 relative pb-12 pr-2">
             <div className="flex flex-row gap-4 mt-5 h-auto w-full px-4">
               {post.categories.map((category: Category) => (
                 <span className="mt-10 flex flex-col justify-center items-center text-gray-400 text-sm font-mont font-bold">{category.title}</span>
