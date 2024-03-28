@@ -49,6 +49,11 @@ export default function PostDetails({post, recentPosts}: Props) {
     }, [])
   return (
     <div className="h-auto container mt-24 mx-auto flex flex-col">
+    
+      <p className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-extrabold font-mont text-accent w-full px-4 py-5">
+        {post.title}
+      </p>
+    
       <AspectRatio ratio={13/5} className={`min-h-[500px] relative ${post.video && 'w-fit mx-auto rounded-3xl overflow-hidden'}`}>
         {post.video ? (
             <>
@@ -76,8 +81,6 @@ export default function PostDetails({post, recentPosts}: Props) {
                 <span className="mt-10 flex flex-col justify-center items-center text-gray-400 text-sm font-mont font-bold">{category.title}</span>
               ))}
             </div>
-
-            <p className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-extrabold font-mont text-accent w-full px-4 mt-5">{post.title}</p>
             
             <div className="flex flex-row justify-between items-center w-full px-4 mt-10">
               <p className="text-sm font-mont font-semibold">published by {post.author.name}</p>

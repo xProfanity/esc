@@ -1,12 +1,37 @@
 "use client";
 import { cn } from "@/lib/utils";
-import React from "react";
+import React, { useState } from "react";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 import Amounts from "./amounts";
 import { BottomGradient } from "./funding-form";
 
+interface AmountsObject {
+  disableOther: boolean;
+  amount: number;
+}
+
 export default function PawapayForm() {
+
+  const [formValues, setFormValues] = useState(
+    {
+      fullname: '',
+      email: '',
+      amount: 500,
+      company: '',
+    }
+  )
+
+  const [amountValue, setAmountValue] = useState<AmountsObject>({disableOther: true, amount: 500})
+
+    const handleValueChange = (e: String) => {
+        if(e === "other") {
+            return setAmountValue({disableOther: false, amount: 100})
+        }
+
+        setAmountValue({disableOther: true, amount: Number(e)})
+    }
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Form submitted");
@@ -24,20 +49,20 @@ export default function PawapayForm() {
         <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
           <LabelInputContainer>
             <Label htmlFor="fullname">Your name</Label>
-            <Input id="fullname" placeholder="John Doe" type="text" />
+            <Input id="fullname" placeholder="John Doe" type="text" value={formValues.fullname} onChange={({target}) => setFormValues({...formValues, fullname: target.value})} />
           </LabelInputContainer>
           <LabelInputContainer>
             <Label htmlFor="email">Your email</Label>
-            <Input id="email" placeholder="example@example.com" type="email" />
+            <Input id="email" placeholder="example@example.com" type="email" value={formValues.email} onChange={({target}) => setFormValues({...formValues, email: target.value})} />
           </LabelInputContainer>
         </div>
         <LabelInputContainer className="mb-4">
           <Label htmlFor="amount">Donation amount</Label>
-          <Amounts />
+          <Amounts amountValue={amountValue} setAmountValue={setAmountValue} handleValueChange={handleValueChange} />
         </LabelInputContainer>
         <LabelInputContainer className="mb-4">
           <Label htmlFor="company">Company name (if applicable)</Label>
-          <Input id="company" placeholder="Company name" type="text" />
+          <Input id="company" placeholder="Company name" type="text" value={formValues.company} onChange={({target}) => setFormValues({...formValues, company: target.value})} />
         </LabelInputContainer>
 
         <button

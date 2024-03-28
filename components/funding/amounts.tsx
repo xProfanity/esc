@@ -1,23 +1,19 @@
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { useState } from "react";
 import { Input } from "../ui/input";
 
-interface amountsObject {
-    disableOther: boolean;
+type AmountValue = {
     amount: number;
+    disableOther: boolean;
 }
 
-export default function Amounts() {
-    const [amountValue, setAmountValue] = useState<amountsObject>({disableOther: true, amount: 500})
+interface Props {
+  amountValue: AmountValue;
+  setAmountValue: (amountValue: AmountValue) => void;
+  handleValueChange: (e: string) => void;
+}
 
-    const handleValueChange = (e: String) => {
-        if(e === "other") {
-            return setAmountValue({disableOther: false, amount: 100})
-        }
-
-        setAmountValue({disableOther: true, amount: Number(e)})
-    }
+export default function Amounts({amountValue, setAmountValue, handleValueChange}: Props) {
 
   return (
     <RadioGroup onValueChange={handleValueChange} defaultValue="500" orientation="horizontal" className="flex flex-col md:flex-row gap-4">
