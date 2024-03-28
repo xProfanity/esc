@@ -42,7 +42,10 @@ export default function PostDetails({post, recentPosts}: Props) {
         }
       }
 
+
+      if(post.video) {
       getVideoPlayback()
+      }
     }, [])
   return (
     <div className="h-auto container mt-24 mx-auto flex flex-col">

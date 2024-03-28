@@ -1,5 +1,4 @@
 "use client";
-import { base } from "@/context/store";
 import {
   AnimatePresence,
   motion,
@@ -8,7 +7,6 @@ import {
 } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
-import { useSnapshot } from "valtio";
 import { cn } from "../../lib/utils";
 import Button from "./button";
 
@@ -27,8 +25,6 @@ export const FloatingNav = ({
   const { scrollYProgress } = useScroll();
 
   const [visible, setVisible] = useState(false);
-
-  const {darkmode} = useSnapshot(base)
 
   useMotionValueEvent(scrollYProgress, "change", (current) => {
     if (typeof current === "number") {
@@ -73,7 +69,7 @@ export const FloatingNav = ({
               "relative items-center flex space-x-1"
             )}
           >
-            <span className="block text-xs sm:text-sm hover:text-accent font-semibold font-mont capitalize">{navItem.name}</span>
+            <span className="block text-xs sm:text-sm hover:text-accent font-normal sm:font-semibold font-mont capitalize">{navItem.name}</span>
           </Link>
         ))}
         <Button>
