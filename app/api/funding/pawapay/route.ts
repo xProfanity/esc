@@ -8,5 +8,5 @@ export function GET() {
 export async function POST(req: Request) {
     const body = await req.json()
 
-    return Response.json({message: `welcome ${body?.username}`})
+    return Response.json({message: `welcome ${body?.fullname}, thanks for the ${body.amount}`})
 }

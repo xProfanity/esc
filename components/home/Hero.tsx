@@ -28,8 +28,8 @@ export default function Hero() {
                         {/* <SomeSVG />
                         <Contacts /> */}
                 </div>
-                <div className="flex w-full -mt-10 absolute bottom-0 -z-10 lg:relative lg:z-10">
-                    <div className="h-12 w-[120vw] -rotate-6 -ml-10 bg-accent flex flex-col justify-center items-center relative">
+                <div className="flex w-full absolute -bottom-32 md:-bottom-28 lg:bottom-0 -z-10 lg:relative lg:z-10">
+                    <div className="h-12 w-[120vw] lg:-rotate-6 bg-accent flex flex-col justify-center items-center relative">
                         <p className="font-bold font-mont text-xl text-nowrap text-center">
                             ● The Registered trustees of Environment, Society & Culture (ESC) ● The Registered trustees of Environment, Society & Culture (ESC) ● The Registered trustees of Environment, Society & Culture (ESC) ● The Registered trustees of Environment, Society & Culture (ESC) ●
                         </p>

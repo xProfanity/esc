@@ -17,7 +17,6 @@ export default function PawapayForm() {
     {
       fullname: '',
       email: '',
-      amount: 500,
       company: '',
     }
   )
@@ -32,9 +31,26 @@ export default function PawapayForm() {
         setAmountValue({disableOther: true, amount: Number(e)})
     }
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Form submitted");
+
+    const load = {
+      fullname: formValues.fullname,
+      email: formValues.email,
+      company: formValues.company,
+      amount: amountValue.amount
+    }
+
+    const options = {
+      method: 'POST',
+      body: JSON.stringify(load)
+    }
+
+    const response = await fetch("api/funding/pawapay", options)
+
+    const result = await response.json()
+
+    console.log("Form submitted", result.message);
   };
   return (
     <div className="max-w-xl w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-black">
