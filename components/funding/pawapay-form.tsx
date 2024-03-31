@@ -50,7 +50,7 @@ export default function PawapayForm() {
 
     const result = await response.json()
 
-    console.log("Form submitted", result.message);
+    console.log("Form submitted", result);
   };
   return (
     <div className="max-w-xl w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-black">
