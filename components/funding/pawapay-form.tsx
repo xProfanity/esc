@@ -50,6 +50,8 @@ export default function PawapayForm() {
 
     const result = await response.json()
 
+    window.location.href = result.redirectUrl
+
     console.log("Form submitted", result);
   };
   return (

@@ -1,7 +1,6 @@
-import axios from "axios"
 import { v4 as uuidv4 } from "uuid"
 
-const BASEURL = process.env.NODE_ENV === "development" ? "https://api.sandbox.pawapay.cloud" : "https://api.pawapay.cloud"
+import { BASEURL } from "@/constants"
 
 export function GET() {
 
@@ -15,28 +14,25 @@ export async function POST(req: Request) {
 
     const depositRequest = {
         "depositId": uuidv4(),
-        "amount": Number(body.amount),
-        "returnUrl": "https://merchant.com/paymentProcessed",
+        "amount": `${body.amount}`,
+        "returnUrl": `https://esc-eta.vercel.app/funding/merchant?name=${body.fullname}&email=${body.email}&company=${body.company}`,
     }
 
     const options = {
+        method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${process.env.NEXT_PUBLIC_MUX_SECRET_KEY}`,
+            'Authorization': `Bearer ${process.env.NEXT_PUBLIC_PAWAPAY_API}`,
         },
+        body: JSON.stringify(depositRequest),
     }
 
     try {
-        console.log('trying');
-        
-        const res = await axios.post(`${BASEURL}/v1/widget/sessions`, depositRequest, options)
+        const res = await fetch(`${BASEURL}/v1/widget/sessions`, options)
 
-        console.log('tried');
-        console.log(`${BASEURL}/deposits`);
-        
-        console.log('success');
-        
-        return Response.json({res})
+        const response = await res.json()
+
+        return Response.json({redirectUrl: response.redirectUrl})
     } catch (error) {
         console.log('saht');
         
