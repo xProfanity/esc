@@ -15,7 +15,7 @@ export async function POST(req: Request) {
     const depositRequest = {
         "depositId": uuidv4(),
         "amount": `${body.amount}`,
-        "returnUrl": `https://esc-eta.vercel.app/funding/merchant?name=${body.fullname}&email=${body.email}&company=${body.company}`,
+        "returnUrl": `https://esc-eta.vercel.app?name=${body.fullname}&email=${body.email}&company=${body.company}`,
     }
 
     const options = {
@@ -28,6 +28,9 @@ export async function POST(req: Request) {
     }
 
     try {
+        console.log('body', body)
+        console.log(`https://esc-eta.vercel.app/funding/merchant?name=${body.fullname}&email=${body.email}&company=${body.company}&amount=${body.amount}`);
+        
         const res = await fetch(`${BASEURL}/v1/widget/sessions`, options)
 
         const response = await res.json()

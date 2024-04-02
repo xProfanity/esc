@@ -55,3 +55,26 @@ export interface Post {
     _createdAt: string;
     _updatedAt: string;
 }
+
+export interface DepositSlip {
+    depositId: string,
+    status: "COMPLETED" | "ACCEPTED" | "SUBMITED" | "FAILED",
+    requestedAmount: string,
+    depositedAmount: string,
+    currency: string,
+    country: string,
+    payer: {
+      type: string,
+      address: {
+        value: string
+      }
+    },
+    correspondent: string,
+    statementDescription: string,
+    customerTimestamp: string,
+    created: string,
+    respondedByPayer: string,
+    correspondentIds: {
+      SOME_CORRESPONDENT_ID: string
+    }
+}

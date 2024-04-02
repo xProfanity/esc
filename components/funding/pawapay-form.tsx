@@ -35,9 +35,9 @@ export default function PawapayForm() {
     e.preventDefault();
 
     const load = {
-      fullname: formValues.fullname,
-      email: formValues.email,
-      company: formValues.company,
+      fullname: formValues.fullname || 'anon',
+      email: formValues.email || 'anon',
+      company: formValues.company || 'anon',
       amount: amountValue.amount
     }
 
