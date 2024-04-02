@@ -6,14 +6,12 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
 import { useSnapshot } from "valtio"
-import { BackgroundRainbow } from ".."
 import Button from "../ui/button"
 
 export default function Hero() {
 
   return (
     <section className="h-[120vh] max-h-[924px] w-full relative z-10">
-        <BackgroundRainbow />
         <div className="h-full w-full relative z-10">
             <div className="h-full flex flex-col justify-start items-start">
                 <div className="lg:my-auto container mx-auto flex flex-col lg:flex-row justify-between item-center relative z-0">

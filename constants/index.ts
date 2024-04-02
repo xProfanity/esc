@@ -1,6 +1,6 @@
 import { charts, leaf, masks } from "@/assets"
 
-export const BASEURL = process.env.NODE_ENV === "development" ? "https://api.sandbox.pawapay.cloud" : "https://api.pawapay.cloud"
+export const BASEURL = "https://api.sandbox.pawapay.cloud"
 
 export const objectives = [
     {
