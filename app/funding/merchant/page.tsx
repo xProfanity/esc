@@ -46,7 +46,7 @@ export default function page() {
                 }
             }
             try {
-                const res = await fetch('/api/db/write', options)
+                const res = await fetch('/api/db', options)
                 const response = await res.json()
 
                 console.log('response', response)
