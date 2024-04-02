@@ -19,8 +19,9 @@ import RecentPosts from "./posts/RecentPosts";
 import Thumbnail from "./posts/Thumbnail";
 import ThumbnailContent from "./posts/ThumbnailContent";
 
+import Merchant from "./funding/Merchant";
 import FundingForm from "./funding/funding-form";
 import PawapayForm from "./funding/pawapay-form";
 
-export { BackgroundRainbow, Contacts, CoreValues, Drawer, Footer, FundingAndVision, FundingForm, Header, Hero, Loader, Missions, Objectives, PawapayForm, Post, PostCard, PostDetails, RecentPosts, ThemeButton, Thumbnail, ThumbnailContent };
+export { BackgroundRainbow, Contacts, CoreValues, Drawer, Footer, FundingAndVision, FundingForm, Header, Hero, Loader, Merchant, Missions, Objectives, PawapayForm, Post, PostCard, PostDetails, RecentPosts, ThemeButton, Thumbnail, ThumbnailContent };
 

@@ -1,6 +1,13 @@
-import { v4 as uuidv4 } from "uuid"
+import { v4 as uuidv4 } from "uuid";
 
-import { BASEURL } from "@/constants"
+import { BASEURL } from "@/constants";
+
+interface Body {
+    amount: number;
+    fullname: string;
+    company: string;
+    email: string;
+}
 
 export function GET() {
 
@@ -8,14 +15,14 @@ export function GET() {
 }
 
 export async function POST(req: Request) {
-    const body = await req.json()
+    const body = await req.json() as Body
 
-    if(body.amount === '') return Response.json({error: 'amount required'})
+    if(body.amount === null) return Response.json({error: 'amount required'})
 
     const depositRequest = {
         "depositId": uuidv4(),
         "amount": `${body.amount}`,
-        "returnUrl": `https://esc-eta.vercel.app/funding/merchant?name=${body.fullname}&email=${body.email}&company=${body.company}`,
+        "returnUrl": `https://esc-eta.vercel.app/funding/merchant?name=${body.fullname.toLowerCase().replaceAll(' ', '_')}&email=${body.email.toLowerCase()}&company=${body.company.toLowerCase().replaceAll(' ', '_')}`,
     }
 
     const options = {

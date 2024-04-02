@@ -11,8 +11,8 @@ export async function POST(req: Request) {
     try {
         await mongoClient.connect()
 
-        const db = mongoClient.db("esc")
-        const collection = db.collection('funds collection')
+        const db = mongoClient.db("Funds")
+        const collection = db.collection('deposits')
 
         await collection.insertOne(deposits)
 
