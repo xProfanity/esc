@@ -11,20 +11,23 @@ import Button from "../ui/button"
 export default function Hero() {
 
   return (
-    <section className="h-[120vh] max-h-[924px] w-full relative z-10 bg-streets bg-cover bg-no-repeat bg-center">
-        <div className="h-full w-full absolute z-0">
+    <section className="h-[120vh] max-h-[924px] w-full relative z-10">
+        <div className="absolute h-full w-full lg:w-1/2 right-0 bg-vector bg-cover bg-no-repeat bg-center"></div>
+
+        <div className="h-full w-full absolute block lg:hidden z-0">
             <Image src={stacked} fill alt="svg" className="object-cover" />
         </div>
         <div className="h-full w-full relative z-10">
             <div className="h-full flex flex-col justify-start items-start">
-                <div className="lg:my-auto container mx-auto flex flex-col lg:flex-row justify-between item-center relative z-0">
+                <div className="lg:my-auto container mx-auto flex flex-col lg:flex-row justify-between item-center relative z-0 h-full w-full">
                         <div className="w-full h-full flex flex-col justify-start items-center sm:items-start gap-10 lg:justify-center mt-56 lg:-mt-10">
                             {/* <Objectives /> */}
                             <Niche />
                             <CTA />
                         </div>
-                        <div className="relative w-full h-full mt-0 lg:-mt-10">
+                        <div className="relative w-full h-full">
                             {/* <HeroImage /> */}
+
                         </div>
                         {/* <SomeSVG />
                         <Contacts /> */}
@@ -47,8 +50,8 @@ const Niche = () => {
     
     return (
         <div className="flex flex-col justify-center items-center">
-            <p className="text-3xl text-white sm:text-5xl font-extrabold font-mont uppercase text-center sm:text-left">Empowering Communities for a Sustainable Future</p>
-            <p className="text-lg font-bold font-mont capitalize text-white text-center sm:text-left w-full mt-10">Strengthening communities to face challenges head-on and thrive.</p>
+            <p className="text-3xl sm:text-5xl font-extrabold font-mont uppercase text-center sm:text-left">Empowering Communities for a Sustainable Future</p>
+            <p className="text-lg font-bold font-mont capitalize text-center sm:text-left w-full mt-10">Strengthening communities to face challenges head-on and thrive.</p>
         </div>
     )
 }

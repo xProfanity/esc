@@ -39,7 +39,7 @@ export default function Header() {
                 </ul>
 
                 <div className="w-2/5 flex flex-col justify-center items-center h-full">
-                    <Button outline>
+                    <Button secondary>
                         Funding
                     </Button>
                 </div>

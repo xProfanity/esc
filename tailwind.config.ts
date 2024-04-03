@@ -33,7 +33,8 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
           pattern: "url(/pattern.svg)",
-          streets: "url(/streets.jpg)"
+          streets: "url(/streets.jpg)",
+          vector: "url(/vector.svg)"
       },
       fontFamily: {
         'mont': ["Montserrat", "sans-serif"]
@@ -41,7 +42,8 @@ const config: Config = {
       colors: {
         primary: "#32cd32",
         accent: '#a855f7',
-        whiteish: "#e3e3e7"
+        whiteish: "#e3e3e7",
+        darkText: "#011222"
       },
       "animation": {
         shimmer: "shimmer 2s linear infinite"
