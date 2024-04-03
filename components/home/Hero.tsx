@@ -47,8 +47,8 @@ const Niche = () => {
     
     return (
         <div className="flex flex-col justify-center items-center">
-            <p className="text-3xl sm:text-5xl font-extrabold font-mont uppercase text-center sm:text-left">Empowering Communities for a Sustainable Future</p>
-            <p className="text-lg font-bold font-mont capitalize text-center sm:text-left w-full mt-10">Strengthening communities to face challenges head-on and thrive.</p>
+            <p className="text-3xl text-white sm:text-5xl font-extrabold font-mont uppercase text-center sm:text-left">Empowering Communities for a Sustainable Future</p>
+            <p className="text-lg font-bold font-mont capitalize text-white text-center sm:text-left w-full mt-10">Strengthening communities to face challenges head-on and thrive.</p>
         </div>
     )
 }

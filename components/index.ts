@@ -1,6 +1,7 @@
 import Footer from "./Footer";
 import Header from "./Header";
 import Loader from "./Loader";
+import SheetDrawer from "./drawer";
 
 import BackgroundRainbow from "./home/BackgroundRainbow";
 import Contacts from "./home/Contacts";
@@ -23,5 +24,5 @@ import Merchant from "./funding/Merchant";
 import FundingForm from "./funding/funding-form";
 import PawapayForm from "./funding/pawapay-form";
 
-export { BackgroundRainbow, Contacts, CoreValues, Drawer, Footer, FundingAndVision, FundingForm, Header, Hero, Loader, Merchant, Missions, Objectives, PawapayForm, Post, PostCard, PostDetails, RecentPosts, ThemeButton, Thumbnail, ThumbnailContent };
+export { BackgroundRainbow, Contacts, CoreValues, Drawer, Footer, FundingAndVision, FundingForm, Header, Hero, Loader, Merchant, Missions, Objectives, PawapayForm, Post, PostCard, PostDetails, RecentPosts, SheetDrawer, ThemeButton, Thumbnail, ThumbnailContent };
 

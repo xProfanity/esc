@@ -9,7 +9,7 @@ import { useSnapshot } from "valtio";
 import { motion } from "framer-motion";
 
 import { base } from "@/context/store";
-import { ThemeButton } from ".";
+import { SheetDrawer, ThemeButton } from ".";
 import Button from "./ui/button";
 
 export default function Header() {
@@ -48,11 +48,8 @@ export default function Header() {
             </div>
 
             <div className="flex md:hidden flex-row-reverse justify-center items-center gap-5">
-                <button type="button" onClick={() => base.drawerOpen = !snap.drawerOpen}>
-                    <svg  className="h-10 w-10" data-slot="icon" fill="none" strokeWidth="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
-                    </svg>
-                </button>
+                
+                <SheetDrawer />
 
                 <ThemeButton />
             </div>
