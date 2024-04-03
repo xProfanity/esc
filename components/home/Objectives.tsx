@@ -52,7 +52,7 @@ export default function Objectives() {
         </div>
 
         <div id="section" className="flex flex-col md:flex-row justify-start md:justify-between items-start">
-          <div className="w-full md:w-2/5 h-96 md:h-full relative ">
+          <div className="w-[90%] mx-auto md:mx-0 md:w-2/5 h-96 md:h-full relative ">
             <div id="textContainer">
               <h1 className="text-4xl sm:text-6xl md:text-4xl lg:text-5xl font-extrabold font-mont
                text-center md:text-left animate-text-down">

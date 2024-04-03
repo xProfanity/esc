@@ -16,7 +16,7 @@ export default function Header() {
     const snap = useSnapshot(base)
 
   return (
-    <motion.header className="absolute top-0 left-0 z-50 h-20 w-full flex flex-col justify-center items-center backdrop-blur-sm">
+    <motion.header className="fixed top-0 left-0 z-50 h-20 w-full flex flex-col justify-center items-center backdrop-blur-sm">
         <nav className="h-full w-[95%] md:container mx-auto flex flex-row justify-between items-center">
             <div className="relative h-16 w-16">
                 <Link href={"/"}>

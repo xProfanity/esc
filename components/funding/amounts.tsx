@@ -32,7 +32,7 @@ export default function Amounts({amountValue, setAmountValue, handleValueChange}
       <div className="flex items-center space-x-2">
         <RadioGroupItem value="other" id="r4" />
         <Label htmlFor="r4">Other</Label>
-        <Input type="number" step={100} defaultValue={amountValue.amount} minLength={0} value={amountValue.amount} disabled={amountValue.disableOther} onChange={({target}) => setAmountValue({amount: Number(target.value), disableOther: false})} />
+        <Input type="number" step={100} defaultValue={amountValue.amount} minLength={0} value={amountValue.amount.toString().replace(/^([+0])/, "")} disabled={amountValue.disableOther} onChange={({target}) => setAmountValue({amount: Number(target.value), disableOther: false})} />
       </div>
     </RadioGroup>
   )

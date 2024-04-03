@@ -1,6 +1,6 @@
 "use client"
 
-import { silhouette, street } from "@/assets"
+import { silhouette, stacked, street } from "@/assets"
 import { base } from "@/context/store"
 import { motion } from "framer-motion"
 import Image from "next/image"
@@ -11,7 +11,10 @@ import Button from "../ui/button"
 export default function Hero() {
 
   return (
-    <section className="h-[120vh] max-h-[924px] w-full relative z-10">
+    <section className="h-[120vh] max-h-[924px] w-full relative z-10 bg-streets bg-cover bg-no-repeat bg-center">
+        <div className="h-full w-full absolute z-0">
+            <Image src={stacked} fill alt="svg" className="object-cover" />
+        </div>
         <div className="h-full w-full relative z-10">
             <div className="h-full flex flex-col justify-start items-start">
                 <div className="lg:my-auto container mx-auto flex flex-col lg:flex-row justify-between item-center relative z-0">
@@ -21,7 +24,7 @@ export default function Hero() {
                             <CTA />
                         </div>
                         <div className="relative w-full h-full mt-0 lg:-mt-10">
-                            <HeroImage />
+                            {/* <HeroImage /> */}
                         </div>
                         {/* <SomeSVG />
                         <Contacts /> */}
