@@ -29,7 +29,7 @@ export default function RootLayout({
           attribute="class"
           defaultTheme="system"
           enableSystem
-          disableTransitionOnChange
+          disableTransitionOnChange={!1}
         >
           <Theme>
           {/* <FloatingNav navItems={Navlinks} /> */}

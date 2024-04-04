@@ -39,9 +39,11 @@ export default function Header() {
                 </ul>
 
                 <div className="w-2/5 flex flex-col justify-center items-center h-full">
-                    <Button secondary>
-                        Funding
-                    </Button>
+                    <Link href={"/funding"}>
+                        <Button secondary>
+                            Funding
+                        </Button>
+                    </Link>
                 </div>
 
                 <ThemeButton />
