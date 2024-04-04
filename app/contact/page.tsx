@@ -1,6 +1,9 @@
+import { Contacts } from "@/components";
 
 export default function Contact() {
   return (
-    <div className="h-screen w-full">page</div>
+    <div className="min-h-screen h-auto flex flex-col justify-center items-center relative w-full">
+      <Contacts />
+    </div>
   )
 }

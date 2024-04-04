@@ -8,7 +8,7 @@ export default function Funding() {
       <div className="h-[60vh] max-h-[924px] container mx-auto flex flex-col gap-16 md:gap-0 md:flex-row justify-center items-center  md:pb-0 mt-36 md:mt-0">
         <div className="w-full h-full flex flex-col justify-center items-center relative z-10">
           <div className="w-full h-full relative flex flex-col items-center justify-center">
-            <Text className="text-center font-bold text-3xl md:text-6xl md:font-extrabold font-mont">
+            <Text className="text-center font-bold text-3xl md:text-6xl md:font-extrabold font-mont text-primary">
               Empower Change, Transform Lives
             </Text>
           </div>

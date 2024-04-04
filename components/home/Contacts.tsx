@@ -1,12 +1,7 @@
 "use client"
-import { base } from "@/context/store"
 import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api"
-import { useSnapshot } from "valtio"
-
 
 export default function Contacts() {
-
-    const snap = useSnapshot(base)
 
     const {isLoaded, loadError} = useJsApiLoader({
         id: "google-map-script",

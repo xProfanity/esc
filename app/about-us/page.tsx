@@ -9,7 +9,7 @@ export default function About() {
     <div className="min-h-screen h-auto w-full relative">
       <SvgLayer />
       <div className="h-screen max-h-[720px] relative w-full flex flex-col justify-center items-center gap-10">
-        <Heading size={"9"} className="font-mont">
+        <Heading size={"9"} className="font-mont text-primary">
           About us
         </Heading>
 
