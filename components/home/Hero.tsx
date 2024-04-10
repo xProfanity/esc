@@ -3,7 +3,7 @@
 import { base } from "@/context/store"
 import Link from "next/link"
 import { useSnapshot } from "valtio"
-import { BottomGradient } from "../funding/funding-form"
+import BottomGradient from "../ui/bottom-gradient"
 import Button from "../ui/button"
 import { Input } from "../ui/input"
 

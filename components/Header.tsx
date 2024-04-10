@@ -4,19 +4,14 @@ import { logo } from "@/assets";
 import { Navlinks } from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
-import { useSnapshot } from "valtio";
 
-import { motion } from "framer-motion";
 
-import { base } from "@/context/store";
 import { SheetDrawer, ThemeButton } from ".";
 import Button from "./ui/button";
 
 export default function Header() {
-    const snap = useSnapshot(base)
-
   return (
-    <motion.header className="fixed top-0 left-0 z-50 h-20 w-full flex flex-col justify-center items-center backdrop-blur-sm">
+    <header className="fixed top-0 left-0 z-50 h-20 w-full flex flex-col justify-center items-center backdrop-blur-sm">
         <nav className="h-full w-[95%] md:container mx-auto flex flex-row justify-between items-center">
             <div className="relative h-16 w-16">
                 <Link href={"/"}>
@@ -29,8 +24,8 @@ export default function Header() {
                 </Link>
             </div>
 
-            <div className="md:w-4/5 lg:w-1/2 h-full md:flex hidden flex-row justify-between items-center">
-                <ul className="flex flex-row justify-around items-center w-full">
+            <div className="md:w-4/5 lg:w-1/2 h-full md:flex hidden flex-row justify-end items-center">
+                <ul className="flex flex-row justify-end items-center w-full gap-8">
                     {Navlinks.map((item, i) => (
                         <li key={i} className="font-semibold capitalize font-mont">
                             <Link href={item.link}>{item.name}</Link>
@@ -56,6 +51,6 @@ export default function Header() {
                 <ThemeButton />
             </div>
         </nav>
-    </motion.header>
+    </header>
   )
 }
