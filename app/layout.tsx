@@ -32,7 +32,6 @@ export default function RootLayout({
           disableTransitionOnChange={!1}
         >
           <Theme>
-          {/* <FloatingNav navItems={Navlinks} /> */}
             <Header />
             <Drawer />
             <BodyWrapper>

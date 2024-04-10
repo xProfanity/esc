@@ -48,7 +48,7 @@ export default function PostDetails({post, recentPosts}: Props) {
       }
     }, [])
   return (
-    <div className="h-auto container mt-24 mx-auto flex flex-col">
+    <div className="h-auto container mt-24 mx-auto flex flex-col relative">
     
       <p className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-extrabold font-mont text-accent w-full px-4 py-5">
         {post.title}
