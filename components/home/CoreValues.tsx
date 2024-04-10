@@ -1,14 +1,11 @@
 "use client"
 
 import Image from "next/image";
-import { useSnapshot } from "valtio";
 
 import { integrity, logo, professionalism, quality, transparency } from "@/assets";
-import { base } from "@/context/store";
 import { BackgroundRainbow } from "..";
 
 export default function CoreValues() {
-    const snap = useSnapshot(base)
   return (
     <section className="h-screen w-full mt-56 relative">
         <BackgroundRainbow />
