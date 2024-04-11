@@ -16,7 +16,9 @@ export default function Contacts() {
   return (
     <section className="h-screen w-full mt-56">
         <div className="h-[50rem] lg:h-[35rem] container mx-auto flex flex-col lg:flex-row items-center justify-center">
-            <div className="h-full w-full flex flex-col justify-center md:justify-start items-center md:items-start">
+            <div className="h-full w-full flex flex-col justify-center md:justify-start items-center md:items-start dark:bg-grid-white/[0.2] bg-grid-black/[0.2] relative">
+            <div className='absolute pointer-events-none inset-0 flex items-center justify-center [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]'></div>
+
                 <h1 className="text-5xl sm:text-6xl font-extrabold text-primary font-mont">Contact Us</h1>
                 <p className="mt-5 text-sm sm:text-lg md:text-xl text-center md:text-left font-medium font-mont w-2/3">Have questions or want to get involved? Reach out to us! We're here to listen, assist, and collaborate.</p>
 

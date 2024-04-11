@@ -1,8 +1,7 @@
 "use client"
 
-import { base } from "@/context/store"
 import Link from "next/link"
-import { useSnapshot } from "valtio"
+import { useState } from "react"
 import BottomGradient from "../ui/bottom-gradient"
 import Button from "../ui/button"
 import { Input } from "../ui/input"
@@ -38,7 +37,6 @@ export default function Hero() {
 }
 
 const Niche = () => {
-    const snap = useSnapshot(base)
     
     return (
         <div className="flex flex-col justify-center items-center">
@@ -50,8 +48,40 @@ const Niche = () => {
 
 const CTA = () => {
 
+    const [email, setEmail] = useState("")
+
+    function isValidEmail(email: string) {
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        return emailRegex.test(email);
+    }
+
+    const handleEmailSub = async () => {
+        if(isValidEmail(email)) {
+            const options = {
+                method: 'POST',
+                body: JSON.stringify({email: email.toLowerCase()}),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }
+            try {
+                const res = await fetch('http://localhost:3000/api/newsletter/sub', options)
+
+                const response = await res.json()
+
+                console.log('response', response)
+            } catch (error) {
+                console.log('error', error)
+            }
+
+            return setEmail('email subbed')
+        }
+
+        return setEmail('invalid email damn')
+    }
+
     return (
-        <div className="flex flex-col justify-around sm:justify-center items-center sm:items-start gap-5 w-full flex-1 sm:flex-none">
+        <div className="flex flex-col justify-around text sm:justify-center items-center sm:items-start gap-5 w-full flex-1 sm:flex-none">
             <Link href={"/posts"}>
                 <Button>
                     See Activities
@@ -59,10 +89,11 @@ const CTA = () => {
             </Link>
 
             <div className="h-auto w-full flex flex-col sm:flex-row gap-2 relative justify-center sm:justify-start items-center">
-                <Input type="text" placeholder="sign up email for newslater" className="w-[20rem] sm:w-[24rem] h-12" />
+                <Input type="email" value={email} onChange={({target}) => setEmail(target.value)} placeholder="sign up email for newsletter" className="w-[20rem] sm:w-[24rem] h-12" />
                 <button
                     className="bg-gradient-to-br h-12 relative group/btn from-zinc-900 to-zinc-900 block bg-zinc-800 w-1/2 sm:w-1/5 text-white rounded-md font-medium shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
-                    type="submit"
+                    type="button"
+                    onClick={handleEmailSub}
                 >
                     Sign up
                     <BottomGradient />
