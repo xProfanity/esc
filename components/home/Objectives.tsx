@@ -64,9 +64,7 @@ export default function Objectives() {
               <p className="text-sm sm:text-lg md:text-xl text-center md:text-left font-medium font-mont mt-10 w-full lg:w-2/3 animate-text-down">Our organization aims to promote environmental sustainability, advocate for social justice and economic integrity, and foster health and cultural preservation. Together, we strive for a more sustainable, equitable, and healthy future</p>
             </div>
           </div>
-          <div className="w-full md:w-3/5 h-full flex flex-col gap-10 lg:gap-20 dark:bg-grid-white/[0.2] bg-grid-black/[0.2] relative">
-            <div className='absolute pointer-events-none inset-0 flex items-center justify-center [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]'></div>
-
+          <div className="w-full md:w-3/5 h-full flex flex-col gap-10 lg:gap-20 relative">
             {objectives.map((objective, index) => (
               <Objective objective={objective} key={index} />
             ))}
