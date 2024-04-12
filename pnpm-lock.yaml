@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@emailjs/nodejs':
+    specifier: ^2.2.0
+    version: 2.2.0
   '@mux/mux-node':
     specifier: ^8.2.3
     version: 8.2.3
@@ -1525,6 +1528,11 @@ packages:
     dependencies:
       react: 18.2.0
       tslib: 2.6.2
+    dev: false
+
+  /@emailjs/nodejs@2.2.0:
+    resolution: {integrity: sha512-R5V14yCNmdQ5CrzE09BlsV/5s2DN8UcmxgBTo/Jk4T8TKxYT6s8lcEBUgfHSSvPRv/GGsNUknW7MNypgibVOpA==}
+    engines: {node: '>=14.0.0'}
     dev: false
 
   /@emotion/is-prop-valid@0.8.8:

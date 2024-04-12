@@ -1,5 +1,15 @@
 import { client } from "@/lib/sanity-client"
 
+export async function fetchPostById(id: string) {
+    const query = `*[_type == "post" && _id == "${id}"] {
+        title, synopsis, slug
+    }`
+
+    const response = await client.fetch(query)
+
+    return response[0]
+}
+
 export async function fetchFeaturedPost() {
     const query = `*[_type == "post" && featured == true]`
 

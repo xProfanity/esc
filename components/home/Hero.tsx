@@ -77,7 +77,7 @@ const CTA = () => {
             return setEmail('email subbed')
         }
 
-        return setEmail('invalid email damn')
+        return setEmail('invalid email')
     }
 
     return (
