@@ -1,27 +1,36 @@
 "use client"
 
-import MuxVideoPlayer from "@mux/mux-player-react"
-
 import { Category, Post } from "@/common"
 import { urlFor } from "@/lib/sanity-client"
+import MuxVideoPlayer from "@mux/mux-player-react"
 import Image from "next/image"
 import { useEffect, useState } from "react"
 import { Loader, PostCard } from ".."
 import { AspectRatio } from "../ui/aspect-ratio"
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "../ui/carousel"
 
 type Props = {
     post: Post;
     recentPosts: Post[];
 }
 
+type PostMedia = {
+  video: boolean;
+  src: string;
+}
+
 export default function PostDetails({post, recentPosts}: Props) {
 
-    const [playbackId, setPlaybackId] = useState<string | undefined>()
+    const [playbackVid, setPlaybackVid] = useState<string | undefined>()
 
     const [isLoading, setIsLoading] = useState(false)
 
+    const [postMedia, setPostMedia] = useState<PostMedia[]>([])
+
     let previousWasListItem = false
     let currentList = [] as string[]
+
+    console.log('postMedia', postMedia)
 
     useEffect(() => {
       const getVideoPlayback = async () => {
@@ -33,7 +42,7 @@ export default function PostDetails({post, recentPosts}: Props) {
 
           const asset = await response.json() as {url: string}
 
-          setPlaybackId(asset.url)
+          setPlaybackVid(asset.url)
         } catch (error) {
           console.log('error', error)
           setIsLoading(false)
@@ -42,10 +51,31 @@ export default function PostDetails({post, recentPosts}: Props) {
         }
       }
 
+      const getImagesArray = () => {
+        const data = []
+
+        data.push({
+          video: false,
+          src: urlFor(post.mainImage).fit("fill").url()
+        })
+
+        if(post.media) {
+          for(let img of post.media) {
+            data.push({
+              video: false,
+              src: urlFor(img).fit("fill").url()
+            })
+          }
+        }
+
+        setPostMedia(data)
+      }
 
       if(post.video) {
-      getVideoPlayback()
+        getVideoPlayback()
       }
+
+      getImagesArray()
     }, [])
   return (
     <div className="h-auto container mt-24 mx-auto flex flex-col relative">
@@ -53,27 +83,44 @@ export default function PostDetails({post, recentPosts}: Props) {
       <p className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-extrabold font-mont text-accent w-full px-4 py-5">
         {post.title}
       </p>
-    
-      <AspectRatio ratio={13/5} className={`min-h-[500px] relative ${post.video && 'w-fit mx-auto rounded-3xl overflow-hidden'}`}>
-        {post.video ? (
+
+      <Carousel className="h-auto w-full">
+        <CarouselContent>
+          {post.video && (
+          <CarouselItem>
             <>
               {isLoading ? (
                 <div className="h-full w-full flex flex-col justify-center items-center">
                   <Loader />
                 </div>
               ) : (
-                <MuxVideoPlayer src={playbackId} accentColor="#32cd32" className="rounded-3xl h-full w-full relative" title={post.title} />
+                <AspectRatio ratio={13/5} className={`min-h-[500px] relative ${post.video && 'w-fit mx-auto rounded-3xl overflow-hidden'}`}>
+                  <MuxVideoPlayer src={playbackVid} accentColor="#32cd32" className="rounded-3xl h-full w-full relative" title={post.title} />
+                </AspectRatio>
               )}
             </>
-          ) : (
-            <Image
-              src={urlFor(post.mainImage).fit("fill").url()}
-              fill
-              alt={`${post.slug.current}`}
-              className="object-cover rounded-3xl"
-            />
-        )}
-      </AspectRatio>
+          </CarouselItem>
+          )}
+
+          {postMedia.map((item, index) => (
+            <CarouselItem key={index}>
+              <AspectRatio ratio={13/5} className={`h-auto w-auto relative ${post.video && 'w-fit mx-auto rounded-3xl overflow-hidden'}`}>
+                    <Image
+                      src={item.src}
+                      fill
+                      alt={`${post.slug.current}`}
+                      className="object-cover rounded-3xl"
+                    />
+                </AspectRatio>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
+
+
+
 
           <div className="w-full min-h-screen h-auto mx-auto mt-64 sm:mt-56 md:mt-44 lg:mt-24 xl:mt-10 relative pb-12 pr-2">
             <div className="flex flex-row gap-4 mt-5 h-auto w-full px-4">

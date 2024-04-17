@@ -41,6 +41,7 @@ export interface SanityImage {
 export interface Post {
     publishedAt: string;
     mainImage: SanityImage;
+    media: SanityImage[] | null;
     categories: Category[];
     featured: boolean;
     author: Author;

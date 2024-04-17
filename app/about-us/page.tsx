@@ -1,15 +1,13 @@
 import { charts, leaf, masks } from "@/assets";
 import LayoutGrid from "@/components/ui/layout-grid";
 import { Heading, Text } from "@radix-ui/themes";
-import SvgLayer from "./svg-layer";
 
 export default function About() {
 
   return (
     <div className="min-h-screen h-auto w-full relative">
-      <SvgLayer />
-      <div className="h-screen max-h-[720px] relative w-full flex flex-col justify-center items-center gap-10">
-        <Heading size={"9"} className="font-mont text-primary">
+      <div className="h-screen max-h-[720px] relative container bg-accent rounded-3xl mx-auto mt-20 flex flex-col justify-center items-center gap-10">
+        <Heading size={"9"} className="font-mont font-extrabold">
           About us
         </Heading>
 
