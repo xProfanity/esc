@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import { useState } from "react"
+import { z } from "zod"
 import BottomGradient from "../ui/bottom-gradient"
 import Button from "../ui/button"
 import { Input } from "../ui/input"
@@ -46,17 +47,19 @@ const Niche = () => {
     )
 }
 
+const EmailSchema = z.string().email()
+
 const CTA = () => {
 
     const [email, setEmail] = useState("")
-
-    function isValidEmail(email: string) {
-        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-        return emailRegex.test(email);
-    }
+    const [emailError, setEmailError] = useState<string | null>(null)
 
     const handleEmailSub = async () => {
-        if(isValidEmail(email)) {
+
+        try {
+
+            EmailSchema.parse(email)
+
             const options = {
                 method: 'POST',
                 body: JSON.stringify({email: email.toLowerCase()}),
@@ -64,20 +67,16 @@ const CTA = () => {
                     'Content-Type': 'application/json'
                 }
             }
-            try {
-                const res = await fetch('http://localhost:3000/api/newsletter/sub', options)
-
-                const response = await res.json()
-
-                console.log('response', response)
-            } catch (error) {
-                console.log('error', error)
-            }
-
-            return setEmail('email subbed')
+            const res = await fetch(`${process.env.NODE_ENV === "development" ? 'http://localhost:3000' : 'https://esc-eta.vercel.app'}/api/newsletter/sub`, options)
+    
+            const response = await res.json()
+    
+            console.log('response', response)
+            setEmailError(null)
+        } catch (error) {
+            console.log('error', error)
+            setEmailError("Invalid email format")
         }
-
-        return setEmail('invalid email')
     }
 
     return (
@@ -98,7 +97,11 @@ const CTA = () => {
                     Sign up
                     <BottomGradient />
                 </button>
+
             </div>
+            {emailError && (
+                <p className="text-sm text-red-500 -mt-3 font-mont">{emailError}</p>
+            )}
         </div>
     )
 }

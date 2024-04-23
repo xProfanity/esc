@@ -84,7 +84,7 @@ export default function PostDetails({post, recentPosts}: Props) {
         {post.title}
       </p>
 
-      <Carousel className="h-auto w-full">
+      <Carousel className="lg:min-h-screen h-auto w-full lg:py-10">
         <CarouselContent>
           {post.video && (
           <CarouselItem>
@@ -104,7 +104,7 @@ export default function PostDetails({post, recentPosts}: Props) {
 
           {postMedia.map((item, index) => (
             <CarouselItem key={index}>
-              <AspectRatio ratio={13/5} className={`h-auto w-auto relative ${post.video && 'w-fit mx-auto rounded-3xl overflow-hidden'}`}>
+              <AspectRatio ratio={13/5} className={`h-auto w-auto relative mx-auto rounded-3xl overflow-hidden`}>
                     <Image
                       src={item.src}
                       fill
@@ -115,8 +115,12 @@ export default function PostDetails({post, recentPosts}: Props) {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
+        {post.video !== null || postMedia.length > 1 && (
+          <>
+            <CarouselPrevious />
+            <CarouselNext />
+          </>
+        )}
       </Carousel>
 
 
