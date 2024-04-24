@@ -1,6 +1,7 @@
 import { Drawer, Footer, Header } from "@/components";
 import BodyWrapper from "@/components/home/BodyWrapper";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Toaster } from "@/components/ui/toaster";
 import { Theme } from "@radix-ui/themes";
 import '@radix-ui/themes/styles.css';
 import type { Metadata } from "next";
@@ -38,6 +39,7 @@ export default function RootLayout({
               {children}
             </BodyWrapper>
             <Footer />
+            <Toaster />
           </Theme>
         </ThemeProvider>
       </body>

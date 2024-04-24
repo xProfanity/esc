@@ -6,6 +6,7 @@ import { z } from "zod"
 import BottomGradient from "../ui/bottom-gradient"
 import Button from "../ui/button"
 import { Input } from "../ui/input"
+import { useToast } from "../ui/use-toast"
 
 export default function Hero() {
 
@@ -54,6 +55,8 @@ const CTA = () => {
     const [email, setEmail] = useState("")
     const [emailError, setEmailError] = useState<string | null>(null)
 
+    const {toast} = useToast()
+
     const handleEmailSub = async () => {
 
         try {
@@ -72,7 +75,13 @@ const CTA = () => {
             const response = await res.json()
     
             console.log('response', response)
+            toast({
+                title: "Subscription Success.",
+                description: `Successfully subscribed ${email.toLowerCase()} to our newsletter`,
+            })
+            setEmail("")
             setEmailError(null)
+
         } catch (error) {
             console.log('error', error)
             setEmailError("Invalid email format")
