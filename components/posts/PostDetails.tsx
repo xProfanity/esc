@@ -6,7 +6,6 @@ import MuxVideoPlayer from "@mux/mux-player-react"
 import Image from "next/image"
 import { useEffect, useState } from "react"
 import { Loader, PostCard } from ".."
-import { AspectRatio } from "../ui/aspect-ratio"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "../ui/carousel"
 
 type Props = {
@@ -94,9 +93,7 @@ export default function PostDetails({post, recentPosts}: Props) {
                   <Loader />
                 </div>
               ) : (
-                <AspectRatio ratio={13/5} className={`min-h-[500px] relative ${post.video && 'w-fit mx-auto rounded-3xl overflow-hidden'}`}>
                   <MuxVideoPlayer src={playbackVid} accentColor="#32cd32" className="rounded-3xl h-full w-full relative" title={post.title} />
-                </AspectRatio>
               )}
             </>
           </CarouselItem>
@@ -104,14 +101,14 @@ export default function PostDetails({post, recentPosts}: Props) {
 
           {postMedia.map((item, index) => (
             <CarouselItem key={index}>
-              <AspectRatio ratio={13/5} className={`h-auto w-auto relative mx-auto rounded-3xl overflow-hidden`}>
+              <div className={`h-auto min-h-[500px] w-auto relative mx-auto rounded-3xl overflow-hidden`}>
                     <Image
                       src={item.src}
                       fill
                       alt={`${post.slug.current}`}
                       className="object-cover rounded-3xl"
                     />
-                </AspectRatio>
+                </div>
             </CarouselItem>
           ))}
         </CarouselContent>
