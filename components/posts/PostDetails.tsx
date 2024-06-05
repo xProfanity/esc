@@ -6,6 +6,7 @@ import MuxVideoPlayer from "@mux/mux-player-react"
 import Image from "next/image"
 import { useEffect, useState } from "react"
 import { Loader, PostCard } from ".."
+import { AspectRatio } from "../ui/aspect-ratio"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "../ui/carousel"
 
 type Props = {
@@ -28,8 +29,6 @@ export default function PostDetails({post, recentPosts}: Props) {
 
     let previousWasListItem = false
     let currentList = [] as string[]
-
-    console.log('postMedia', postMedia)
 
     useEffect(() => {
       const getVideoPlayback = async () => {
@@ -83,7 +82,7 @@ export default function PostDetails({post, recentPosts}: Props) {
         {post.title}
       </p>
 
-      <Carousel className="lg:min-h-screen h-auto w-full lg:py-10">
+      <Carousel className="h-auto w-full lg:py-10">
         <CarouselContent>
           {post.video && (
           <CarouselItem>
@@ -93,7 +92,9 @@ export default function PostDetails({post, recentPosts}: Props) {
                   <Loader />
                 </div>
               ) : (
+                <AspectRatio ratio={13/5} className={`h-auto relative ${post.video && 'w-fit mx-auto rounded-3xl overflow-hidden'}`}>
                   <MuxVideoPlayer src={playbackVid} accentColor="#32cd32" className="rounded-3xl h-full w-full relative" title={post.title} />
+                </AspectRatio>
               )}
             </>
           </CarouselItem>
@@ -101,43 +102,39 @@ export default function PostDetails({post, recentPosts}: Props) {
 
           {postMedia.map((item, index) => (
             <CarouselItem key={index}>
-              <div className={`h-auto min-h-[500px] w-auto relative mx-auto rounded-3xl overflow-hidden`}>
+              <AspectRatio ratio={13/5} className={`h-auto w-11/12 md:w-auto md:relative mx-auto rounded-3xl overflow-hidden`}>
                     <Image
                       src={item.src}
                       fill
                       alt={`${post.slug.current}`}
                       className="object-cover rounded-3xl"
                     />
-                </div>
+                </AspectRatio>
             </CarouselItem>
           ))}
         </CarouselContent>
-        {post.video !== null || postMedia.length > 1 && (
-          <>
-            <CarouselPrevious />
-            <CarouselNext />
-          </>
-        )}
-      </Carousel>
+        <CarouselPrevious />
+        <CarouselNext />
+        </Carousel>
 
 
 
 
-          <div className="w-full min-h-screen h-auto mx-auto mt-64 sm:mt-56 md:mt-44 lg:mt-24 xl:mt-10 relative pb-12 pr-2">
+          <div className="w-full min-h-screen h-auto mx-auto relative pb-12 pr-2">
             <div className="flex flex-row gap-4 mt-5 h-auto w-full px-4">
               {post.categories.map((category: Category) => (
                 <span className="mt-10 flex flex-col justify-center items-center text-gray-400 text-sm font-mont font-bold">{category.title}</span>
               ))}
             </div>
             
-            <div className="flex flex-row justify-between items-center w-full px-4 mt-10">
+            <div className="flex flex-row justify-between items-center w-[95%] md:w-full mx-auto px-4 mt-10">
               <p className="text-sm font-mont font-semibold">published by {post.author.name}</p>
 
               <p className="text-sm font-mont font-semibold">{new Date(post.publishedAt).toDateString()}</p>
             </div>
 
             <div className="w-full h-auto flex flex-col lg:flex-row">
-              <div className="flex flex-col gap-5 w-full lg:w-2/3 px-2 lg:px-4 mt-10">
+              <div className="flex flex-col gap-5 w-5/6 mx-auto lg:w-2/3 px-2 lg:px-4 mt-10 text-justify">
                 {post.body.map((item, i) => {
                   switch (item.style) {
                     case "h1":
@@ -226,7 +223,7 @@ export default function PostDetails({post, recentPosts}: Props) {
                 })}
               </div>
 
-              <div className="w-full lg:w-1/3 h-full mt-10 flex flex-col gap-10">
+              <div className="w-4/5 mx-auto md:w-full lg:w-1/3 h-full mt-10 flex flex-col gap-10">
                 <p className="font-bold font-mont text-pretty text-3xl md:text-4xl">More Posts</p>
                 <div className="w-full flex flex-row flex-wrap lg:flex-col gap-10">
                   {recentPosts.map((post) => (
