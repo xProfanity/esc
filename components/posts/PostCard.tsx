@@ -15,7 +15,7 @@ export default function PostCard({post}: Props) {
     <div className="w-full flex flex-col">
         <div className="relative w-full h-[280px]">
             <Image
-                src={urlFor(post.mainImage).fit("fill").url()}
+                src={urlFor(post?.mainImage).fit("fill").url()}
                 fill
                 alt="thumbnail"
                 className="object-cover rounded-3xl"

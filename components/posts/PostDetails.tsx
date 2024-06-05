@@ -104,7 +104,7 @@ export default function PostDetails({post, recentPosts}: Props) {
             <CarouselItem key={index}>
               <AspectRatio ratio={13/5} className={`h-auto w-11/12 md:w-auto md:relative mx-auto rounded-3xl overflow-hidden`}>
                     <Image
-                      src={item.src}
+                      src={item?.src}
                       fill
                       alt={`${post.slug.current}`}
                       className="object-cover rounded-3xl"
