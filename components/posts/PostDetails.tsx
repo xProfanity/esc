@@ -117,13 +117,10 @@ export default function PostDetails({post, recentPosts}: Props) {
         <CarouselNext />
         </Carousel>
 
-
-
-
           <div className="w-full min-h-screen h-auto mx-auto relative pb-12 pr-2">
             <div className="flex flex-row gap-4 mt-5 h-auto w-full px-4">
-              {post.categories.map((category: Category) => (
-                <span className="mt-10 flex flex-col justify-center items-center text-gray-400 text-sm font-mont font-bold">{category.title}</span>
+              {post.categories.map((category: Category, index) => (
+                <span key={index} className="mt-10 flex flex-col justify-center items-center text-gray-400 text-sm font-mont font-bold">{category.title}</span>
               ))}
             </div>
             
@@ -210,9 +207,9 @@ export default function PostDetails({post, recentPosts}: Props) {
                       )
                     default:
                       return(
-                        <div className="relative h-[400px] w-full rounded overflow-hidden">
+                        <div key={i} className="relative h-[400px] w-full rounded overflow-hidden">
                           <Image
-                            src={urlFor(item.asset).fit("fill").url()}
+                            src={urlFor(item?.asset).fit("fill").url()}
                             fill
                             alt="block image"
                             className="object-cover"
