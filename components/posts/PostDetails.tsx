@@ -27,6 +27,8 @@ export default function PostDetails({post, recentPosts}: Props) {
 
     const [postMedia, setPostMedia] = useState<PostMedia[]>([])
 
+    console.log('postMedia', postMedia)
+
     let previousWasListItem = false
     let currentList = [] as string[]
 
@@ -100,7 +102,7 @@ export default function PostDetails({post, recentPosts}: Props) {
           </CarouselItem>
           )}
 
-          {postMedia.map((item, index) => (
+          {postMedia.length > 0 && postMedia.map((item, index) => (
             <CarouselItem key={index}>
               <AspectRatio ratio={13/5} className={`h-auto w-11/12 md:w-auto md:relative mx-auto rounded-3xl overflow-hidden`}>
                     <Image
