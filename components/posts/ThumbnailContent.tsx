@@ -19,7 +19,7 @@ export default function ThumbnailContent({featuredPost}: Props) {
     <div className="h-full w-full relative rounded-3xl overflow-hidden shadow-2xl">
         <div className="absolute z-0 h-full w-full">
             <Image
-                src={urlFor(featuredPost?.mainImage).fit("fill").url()}
+                src={urlFor(featuredPost?.mainImage)?.fit("fill")?.url()}
                 fill
                 alt="post thumbnail"
                 blurDataURL=""

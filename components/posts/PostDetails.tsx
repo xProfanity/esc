@@ -54,14 +54,14 @@ export default function PostDetails({post, recentPosts}: Props) {
 
         data.push({
           video: false,
-          src: urlFor(post.mainImage).fit("fill").url()
+          src: urlFor(post.mainImage)?.fit("fill")?.url()
         })
 
         if(post.media) {
           for(let img of post.media) {
             data.push({
               video: false,
-              src: urlFor(img).fit("fill").url()
+              src: urlFor(img)?.fit("fill")?.url()
             })
           }
         }
@@ -209,7 +209,7 @@ export default function PostDetails({post, recentPosts}: Props) {
                       return(
                         <div key={i} className="relative h-[400px] w-full rounded overflow-hidden">
                           <Image
-                            src={urlFor(item?.asset).fit("fill").url()}
+                            src={urlFor(item?.asset)?.fit("fill")?.url()}
                             fill
                             alt="block image"
                             className="object-cover"
