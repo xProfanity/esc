@@ -15,7 +15,6 @@ export default function ThumbnailContent({featuredPost}: Props) {
         }
     }
 
-    console.log('featuredPost', urlFor(featuredPost.mainImage).fit('fill').url())
   return (
     <div className="h-full w-full relative rounded-3xl overflow-hidden shadow-2xl">
         <div className="absolute z-0 h-full w-full">

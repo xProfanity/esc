@@ -11,7 +11,6 @@ type Props = {
 
 export default function PostCard({post}: Props) {
 
-    console.log('urlFor(post?.mainImage).fit("fill").url()', urlFor(post?.mainImage).fit("fill").url())
   return (
     <div className="w-full flex flex-col">
         <div className="relative w-full h-[280px]">

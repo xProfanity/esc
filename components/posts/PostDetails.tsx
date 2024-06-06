@@ -21,13 +21,13 @@ type PostMedia = {
 
 export default function PostDetails({post, recentPosts}: Props) {
 
-    const [playbackVid, setPlaybackVid] = useState<string | undefined>()
+    const [playbackVid, setPlaybackVid] = useState<string | null>(null)
 
     const [isLoading, setIsLoading] = useState(false)
 
     const [postMedia, setPostMedia] = useState<PostMedia[]>([])
 
-    console.log('postMedia', postMedia)
+    console.log('playbackVid', playbackVid)
 
     let previousWasListItem = false
     let currentList = [] as string[]
@@ -86,7 +86,7 @@ export default function PostDetails({post, recentPosts}: Props) {
 
       <Carousel className="h-auto w-full lg:py-10">
         <CarouselContent>
-          {post.video && (
+          {post.video && playbackVid && (
           <CarouselItem>
             <>
               {isLoading ? (
