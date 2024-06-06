@@ -27,8 +27,6 @@ export default function PostDetails({post, recentPosts}: Props) {
 
     const [postMedia, setPostMedia] = useState<PostMedia[]>([])
 
-    console.log('playbackVid', playbackVid)
-
     let previousWasListItem = false
     let currentList = [] as string[]
 
