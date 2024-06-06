@@ -33,7 +33,7 @@ export async function fetchRecentPosts(excludeFeatured: boolean, excludedId?: st
 }
 
 export async function fetchPostBySlug(slug: string) {
-    const query = `*[_type == "post" && slug?.current == "${slug}"][0] {
+    const query = `*[_type == "post" && slug.current == "${slug}"][0] {
         ...,
         author -> {
             name, image
