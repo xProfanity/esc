@@ -27,7 +27,7 @@ export async function POST(req: Request) {
                     reply_to: 'pecpalmplay@gmail.com',
                     post_title: post.title,
                     post_synopsis: post.synopsis,
-                    post_link: post.slug.current
+                    post_link: post.slug?.current
                   },
                   {
                     publicKey: process.env.NEXT_PUBLIC_EMAILJS_KEY as string,

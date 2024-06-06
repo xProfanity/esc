@@ -35,7 +35,7 @@ export default function ThumbnailContent({featuredPost}: Props) {
                     <p className="text-white w-full md:w-3/4 text-xs lg:text-sm">{`${fetchParagraph()?.text}`}</p>
                 </div>
                 <div className="w-full md:w-1/5 lg:w-1/4 hidden md:flex flex-col justify-center items-end">
-                    <Link type="button" href={`/posts/${featuredPost.slug.current}`}>
+                    <Link type="button" href={`/posts/${featuredPost.slug?.current}`}>
                         <div className="relative h-[60px] xl:h-[80px] w-[60px] xl:w-[80px]">
                             <Image
                                 src={DArrow}
@@ -47,7 +47,7 @@ export default function ThumbnailContent({featuredPost}: Props) {
                     </Link>
                 </div>
                 <div className="w-full md:w-1/5 lg:w-1/4 flex md:hidden flex-col justify-center items-start">
-                    <Link type="button" href={`/posts/${featuredPost.slug.current}`}>
+                    <Link type="button" href={`/posts/${featuredPost.slug?.current}`}>
                         <button type="button" className="p-4 bg-primary text-white font-semibold font-mont">
                             Read More
                         </button>

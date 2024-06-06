@@ -22,7 +22,7 @@ export default function PostCard({post}: Props) {
             />
         </div>
 
-        <Link href={`/posts/${post.slug.current}`}>
+        <Link href={`/posts/${post.slug?.current}`}>
             <p className="text-sm hover:underline font-bold font-mont mt-4 h-16 px-2">{post.title}</p>
         </Link>
 

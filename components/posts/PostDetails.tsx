@@ -106,7 +106,7 @@ export default function PostDetails({post, recentPosts}: Props) {
                     <Image
                       src={item?.src}
                       fill
-                      alt={`${post.slug.current}`}
+                      alt={`${post.slug?.current}`}
                       className="object-cover rounded-3xl"
                     />
                 </AspectRatio>
