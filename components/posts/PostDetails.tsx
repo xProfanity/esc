@@ -86,7 +86,7 @@ export default function PostDetails({post, recentPosts}: Props) {
 
       <Carousel className="h-auto w-full lg:py-10">
         <CarouselContent>
-          {post.video && (
+          {post.video && playbackVid && (
           <CarouselItem>
             <>
               {isLoading ? (
