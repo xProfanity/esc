@@ -30,7 +30,7 @@ export default function PostCard({post}: Props) {
 
         <div className="mt-5 flex flex-row px-2 justify-start items-center gap-2">
             <Image
-                src={urlFor(post.author.image).height(60).width(60).url()}
+                src={urlFor(post?.author?.image)?.height(60)?.width(60)?.url()}
                 height={25}
                 width={25}
                 alt={`${post.author.name}`}
