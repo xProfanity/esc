@@ -21,7 +21,7 @@ type PostMedia = {
 
 export default function PostDetails({post, recentPosts}: Props) {
 
-    const [playbackVid, setPlaybackVid] = useState<string | undefined>()
+    const [playbackVid, setPlaybackVid] = useState<string | null>()
 
     const [isLoading, setIsLoading] = useState(false)
 
