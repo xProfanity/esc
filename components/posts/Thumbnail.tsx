@@ -10,7 +10,9 @@ export default async function Thumbnail() {
     return (
       <section className='h-screen max-h-[45rem] w-full'>
           <div className="h-[calc(100%-5rem)] w-[95%] md:container mx-auto mt-24">
-            <ThumbnailContent featuredPost={post} />
+            {post && (
+              <ThumbnailContent featuredPost={post} />
+            )}
           </div>
       </section>
     )

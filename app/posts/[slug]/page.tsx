@@ -16,7 +16,9 @@ export default async function PostPage({params: {slug}}: Params) {
 
     return (
       <section className="h-auto w-full pb-40">
-        <PostDetails post={post} recentPosts={recentPosts} />
+        {post && recentPosts && (
+          <PostDetails post={post} recentPosts={recentPosts} />
+        )}
       </section>
     )
   } catch (error) {

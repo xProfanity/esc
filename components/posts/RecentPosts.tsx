@@ -14,7 +14,7 @@ export default async function RecentPosts() {
                     <p className="text-2xl font-bold font-mont mx-auto md:mx-0">Recent blog Posts</p>
     
                     <div className="h-auto w-full flex flex-row flex-wrap gap-6 mt-4">
-                        {posts.map((post) => (
+                        {posts?.map((post) => (
                             <div key={post._id} className="w-[30%] min-w-[330px] mx-auto md:mx-0">
                                 <PostCard post={post} />
                             </div>
